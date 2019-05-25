@@ -1,6 +1,14 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Counter from './components/Counter/Counter';
+/* covers setState method in detail */
+import { ClickEvents } from './components/ClickEvents/ClickEvents'
+/* covers event handling for functional & class components */
+import { EventBind } from './components/EventBind/EventBind';
+
+import { ParentComponent } from './components/MethodProps/MethodProps';
+
 
 function App() {
   return (
@@ -19,6 +27,10 @@ function App() {
           Learn React
         </a>
       </header>
+      <ParentComponent />
+      <EventBind />
+      <ClickEvents />
+      <Counter />
     </div>
   );
 }
