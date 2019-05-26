@@ -41,10 +41,28 @@
   max-width: 60vw;
 }
 
+.test > .test {
+  border: 2px solid green;
+}
+
 .test a {
   font-size: 0.3em;
 }
 
 .test h3 {
   font-size: 24px;
+}
+
+.test span, .test p {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+mark.note {
+  font-size: 12px;
+  padding: 1.5px;
+}
+
+.primary {
+  color: orangered;
 }

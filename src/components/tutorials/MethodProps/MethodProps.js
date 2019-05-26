@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Twrap from '../Twrap/Twrap';
+import Twrap from '../../utils/Twrap/Twrap';
 
 
 

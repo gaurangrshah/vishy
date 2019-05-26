@@ -1,7 +1,7 @@
 import React from 'react';
 import Toggle from '../Toggle/Toggle';
 
-const TestWrap = (props) => {
+const Twrap = (props) => {
   return (
     <section className={`test test__${props.title}`}>
       <Toggle
@@ -17,4 +17,4 @@ const TestWrap = (props) => {
   )
 }
 
-export default TestWrap
+export default Twrap
