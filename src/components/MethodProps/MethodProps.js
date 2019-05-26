@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import TestWrap from '../TestWrap/TestWrap';
+import Twrap from '../Twrap/Twrap';
 
 
 
 export const ChildComponent = (props) => {
   return (
-    <TestWrap
+    <Twrap
       title="methods-as-props"
     >
       <button onClick={props.greetHandler}>Greet Parent</button>
@@ -15,7 +15,7 @@ export const ChildComponent = (props) => {
       {/* using an arrow func to pass params back to parent component */}
       <button onClick={() => props.greetHandler2('child')}>Greet Parent</button>
 
-    </TestWrap>
+    </Twrap>
   )
 }
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TestWrap from '../TestWrap/TestWrap'
+import Twrap from '../Twrap/Twrap'
 
 export class ClassClick extends Component {
   clickHandler() {
@@ -7,11 +7,11 @@ export class ClassClick extends Component {
   }
   render() {
     return (
-      <TestWrap
+      <Twrap
         title="class-click-handlers"
       >
         <button onClick={this.clickHandler}>Click Me</button>
-      </TestWrap>
+      </Twrap>
     )
   }
 }
@@ -24,10 +24,10 @@ export const ClickEvents = () => {
   }
 
   return (
-    <TestWrap
+    <Twrap
       title="ClickEvents"
     >
-      <TestWrap
+      <Twrap
         title="func-click-handlers"
         source="https://www.youtube.com/watch?v=Znqv84xi8Vs"
       >
@@ -36,9 +36,9 @@ export const ClickEvents = () => {
         {/* jsx click handlers are funcs that get passed in as click handlers or event handlers */}
         {/* NOTE: the event handler is a function AND NOT a function call()
       you don't need to call the function, as we only want it to execute when a user clicks */}
-      </TestWrap>
+      </Twrap>
       <ClassClick />
-    </TestWrap>
+    </Twrap>
   )
 }
 

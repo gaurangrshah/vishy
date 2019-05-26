@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TestWrap from '../TestWrap/TestWrap';
+import Twrap from '../Twrap/Twrap';
 
 export class EventBind extends Component {
 
@@ -29,7 +29,7 @@ export class EventBind extends Component {
 
   render() {
     return (
-      <TestWrap
+      <Twrap
         title="event-binding"
         source="https://www.youtube.com/watch?v=kVWpBtRjkCk"
       >
@@ -62,7 +62,7 @@ export class EventBind extends Component {
 
         <button onClick={this.clickHandler2}>Click4</button>
 
-      </TestWrap>
+      </Twrap>
     )
   }
 }

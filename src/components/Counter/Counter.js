@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TestWrap from '../TestWrap/TestWrap'
+import Twrap from '../Twrap/Twrap'
 
 export default class Counter extends Component {
   constructor(props) {
@@ -65,7 +65,7 @@ export default class Counter extends Component {
 
   render() {
     return (
-      <TestWrap
+      <Twrap
         title="counter-setState"
         source="https://www.youtube.com/watch?v=uirRaVjRsf4"
       >
@@ -74,7 +74,7 @@ export default class Counter extends Component {
         <button onClick={() => this.incrementFive()}>Incrementx5</button>
         <button onClick={() => this.incrementPreferred()}>IncrementPref</button>
         <button onClick={() => this.incrementFivePref()}>IncrementPrefx5</button>
-      </TestWrap>
+      </Twrap>
     )
   }
 }
