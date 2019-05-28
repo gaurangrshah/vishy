@@ -1,12 +1,11 @@
-import React, { useState, useEffect } from 'react';
-import Twrap from '../Twrap/Twrap'
+import { useState, useEffect } from 'react';
 
 
 function useLocalStorageState(key, defaultValue) {
   const [state, setState] = useState(() => {
     let value
     try {
-      value = JSON.parse(window.localStorage.getItem(key, state) || JSON.stringify(defaultValue))
+      value = JSON.parse(localStorage.getItem(key) || JSON.stringify(defaultValue))
     } catch (e) {
       value = defaultValue
     }
@@ -14,25 +13,12 @@ function useLocalStorageState(key, defaultValue) {
   })
   useEffect(
     () => {
-      window.localStorage.setItem(key, state)
+      localStorage.setItem(key, state)
     },
     [key, state]
   )
   return [state, setState]
 }
 
-function LocalStorageState() {
-  const [count, setCount] = useLocalStorageState('my-app:count', 0);
-  return (
-    <Twrap
-      title="useLocalStorage-customHook"
-      source="https://www.youtube.com/watch?v=yu3dnHrnps4"
-    >
-      <button onClick={() => setCount(0)}>clear</button>
-      <button onClick={() => setCount(count + 1)}>{count}</button>
-    </Twrap>
-  )
-}
 
-
-export default LocalStorageState;
+export default useLocalStorageState;

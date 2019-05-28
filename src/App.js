@@ -1,24 +1,43 @@
 import React from 'react';
 import './App.css';
+import Twarp from "./components/utils/Twrap/Twrap"
 import Counter from './components/tutorials/Counter/Counter';
 /* covers setState method in detail */
 import { ClickEvents } from './components/tutorials/ClickEvents/ClickEvents'
 /* covers event handling for functional & class components */
 import { EventBind } from './components/tutorials/EventBind/EventBind';
-
 import { ParentComponent } from './components/tutorials/MethodProps/MethodProps';
-
-import LocalStorageState from './components/utils/LocalState/LocalState'
+import LocalStorageState from './components/tutorials/LocalStorageTest/LocalStorageTest';
 import ConditionalRendering from './components/tutorials/ConditionalRendering/ConditionalRendering';
 import ListRendering from "./components/tutorials/ListRendering/ListRendering";
 import Styling from "./components/tutorials/Styling/Styling";
+import FormControl from "./components/tutorials/FormControl/FormControl";
+import FormControl2 from "./components/tutorials/FormControl/FormControl2";
+import Lifecycles from "./components/tutorials/Lifecycles/Lifecycles";
+import ParentComp from "./components/tutorials/PureComponent/ParentComponent";
+import Refs from "./components/tutorials/Refs/Refs"
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Styling primary={true} />
+        {/* <Twarp
+          title="refs"
+          toggle={true}
+          source="http://www.youtube.com/watch?v=FXa9mMTKOu8"
+        > */}
+
+        <Refs />
+
+
+        {/* </Twarp> */}
       </header>
+      <ParentComp />
+      <Lifecycles />
+      <FormControl2 />
+      <FormControl />
+      <Styling primary={true} />
       <ListRendering />
       <ConditionalRendering />
       <LocalStorageState />

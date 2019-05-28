@@ -16,7 +16,7 @@ const Styling = ({ primary }) => {
       title="styling-components"
       source="https://www.youtube.com/watch?v=j5P9FHiBVNo"
     >
-      <mark className={`notes ${className}`} style={heading}>conditionally adds a class to classname prop</mark>
+      <mark className={`notes ${className}`} style={heading}> conditionally adds a class to classname prop </mark>
     </Twrap>
   )
 }

@@ -1,9 +1,16 @@
 import React, { Component } from "react";
 
 export default class Toggle extends Component {
-  state = {
-    on: false
-  };
+  constructor(props) {
+    super(props)
+
+    this.state = {
+      on: this.props.toggle || false
+    };
+  }
+
+
+
 
   toggle = () => {
     this.setState({
