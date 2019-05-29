@@ -34,8 +34,6 @@ function App() {
           toggle={true}
         >
 
-
-
         </Twrap>
 
       </header>
@@ -43,32 +41,20 @@ function App() {
       <Portals />
       <ClickCounter />
       <ErrorHandling />
-
-      <Twrap
-        title="Newer"
-      >
-
+      <Twrap title="Newer">
         <Portals />
         <KeyedRefs />
         <FRParent />
         <FocusInput />
         <RefsDemo />
-
       </Twrap>
-
-      <Twrap
-        title="Intermediate"
-      >
-
+      <Twrap title="Intermediate">
         <ParentComp />
         <Lifecycles />
         <FormControl2 />
         <FormControl />
-
       </Twrap>
-      <Twrap
-        title="basics"
-      >
+      <Twrap title="basics">
         <Styling primary={true} />
         <ListRendering />
         <ConditionalRendering />
@@ -78,33 +64,6 @@ function App() {
         <ClickEvents />
         <Counter />
       </Twrap>
-
-      <a
-        className="App-link"
-        href="https://reactjs.org"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        Learn React
-        </a>
-      <a
-        href="https://devhints.io/react"
-        className="App-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      > React Cheat Sheet </a>
-      <a
-        href="https://reactcheatsheet.com"
-        className="App-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      > React Cheat Sheet Tool </a>
-      <a
-        href="https://github.com/enaqx/awesome-react"
-        className="App-link"
-        target="_blank"
-        rel="noopener noreferrer"
-      > Awesome React </a>
     </div>
   );
 }
