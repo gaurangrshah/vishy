@@ -7,7 +7,7 @@ import { ClickEvents } from './components/tutorials/ClickEvents/ClickEvents'
 /* covers event handling for functional & class components */
 import { EventBind } from './components/tutorials/EventBind/EventBind';
 import { ParentComponent } from './components/tutorials/MethodProps/MethodProps';
-import LocalStorageState from './components/tutorials/LocalStorageTest/LocalStorageTest';
+import LocalStorageState from './components/utils/LocalState/LocalState';
 import ConditionalRendering from './components/tutorials/ConditionalRendering/ConditionalRendering';
 import ListRendering from "./components/tutorials/ListRendering/ListRendering";
 import Styling from "./components/tutorials/Styling/Styling";
