@@ -15,36 +15,57 @@ import FormControl from "./components/tutorials/FormControl/FormControl";
 import FormControl2 from "./components/tutorials/FormControl/FormControl2";
 import Lifecycles from "./components/tutorials/Lifecycles/Lifecycles";
 import ParentComp from "./components/tutorials/PureComponent/ParentComponent";
-import Refs from "./components/tutorials/Refs/Refs"
-
+import RefsDemo from "./components/tutorials/Refs/ClassRefs/RefsDemo";
+import FocusInput from './components/tutorials/Refs/ClassRefs/FocusInput';
+import FRParent from './components/tutorials/Refs/ForwardRefs/FRParent';
+import KeyedRefs from './components/tutorials/Refs/KeyedRefs/KeyedRef';
+import Portals from './components/tutorials/Portals/Portals';
+import ErrorHandling from './components/tutorials/ErrorHandlinPhases/ErrorHandling';
+import ClickCounter from './components/tutorials/HOC/ClickCounter';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
-        {/* <Twarp
-          title="refs"
+        <Twarp
+          title=""
+          source=""
           toggle={true}
-          source="http://www.youtube.com/watch?v=FXa9mMTKOu8"
-        > */}
-
-        <Refs />
-
-
-        {/* </Twarp> */}
+        >
+        </Twarp>
       </header>
-      <ParentComp />
-      <Lifecycles />
-      <FormControl2 />
-      <FormControl />
-      <Styling primary={true} />
-      <ListRendering />
-      <ConditionalRendering />
-      <LocalStorageState />
-      <ParentComponent />
-      <EventBind />
-      <ClickEvents />
-      <Counter />
+      <Portals />
+      <ClickCounter />
+      <ErrorHandling />
+      <Twarp
+        title="Newer"
+      >
+        <Portals />
+        <KeyedRefs />
+        <FRParent />
+        <FocusInput />
+        <RefsDemo />
+      </Twarp>
+      <Twarp
+        title="Intermediate"
+      >
+        <ParentComp />
+        <Lifecycles />
+        <FormControl2 />
+        <FormControl />
+      </Twarp>
+      <Twarp
+        title="Basics"
+      >
+        <Styling primary={true} />
+        <ListRendering />
+        <ConditionalRendering />
+        <LocalStorageState />
+        <ParentComponent />
+        <EventBind />
+        <ClickEvents />
+        <Counter />
+      </Twarp>
 
       <a
         className="App-link"

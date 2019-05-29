@@ -15,12 +15,13 @@ export class ParentComp extends Component {
   }
 
   componentDidMount() {
-    setInterval(() => {
-      // used to demonstrate re-render of child components
-      this.setState({
-        name: 'This Guy'
-      })
-    }, 2000);
+    // uncomment to view renderin updates of children components.
+    // setInterval(() => {
+    // used to demonstrate re-render of child components
+    this.setState({
+      name: 'This Guy'
+    })
+    // }, 2000);
   }
 
   render() {
