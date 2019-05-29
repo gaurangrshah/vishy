@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Input from './ClassRefs';
-import Twarp from '../../../utils/Twrap/Twrap';
+import Twrap from '../../../utils/Twrap/Twrap';
 
 class FocusInput extends Component {
   constructor(props) {
@@ -16,13 +16,13 @@ class FocusInput extends Component {
 
   render() {
     return (
-      <Twarp
+      <Twrap
         title="refs"
         source="http://www.youtube.com/watch?v=FXa9mMTKOu8"
       >
         <Input ref={this.componentRef} />
         <button onClick={this.clickHandler}>Focus Input</button>
-      </Twarp>
+      </Twrap>
     )
   }
 }

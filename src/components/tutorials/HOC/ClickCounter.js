@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Twarp from '../../utils/Twrap/Twrap';
+import Twrap from '../../utils/Twrap/Twrap';
 import HoverCounter from './HoverCounter';
 
 class ClickCounter extends Component {
@@ -23,14 +23,14 @@ class ClickCounter extends Component {
 
   render() {
     return (
-      <Twarp
+      <Twrap
         title="HOCpt1"
         source="http://www.youtube.com/watch?v=B6aNv8nkUSw"
       >
         <button onClick={this.incrementCount}>Clicked {this.state.count} Times</button>
         {/* button with click handler that increments the count from state */}
         <HoverCounter />
-      </Twarp>
+      </Twrap>
     )
   }
 }

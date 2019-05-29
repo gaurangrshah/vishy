@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Twarp from '../../../utils/Twrap/Twrap';
+import Twrap from '../../../utils/Twrap/Twrap';
 
 
 
@@ -56,7 +56,7 @@ class RefsDemo extends Component {
   render() {
     return (
 
-      <Twarp
+      <Twrap
         title="refs"
         toggle={false}
         source="http://www.youtube.com/watch?v=FXa9mMTKOu8"
@@ -75,7 +75,7 @@ class RefsDemo extends Component {
         /><br />
         <button onClick={() => this.clickHandler()}>Click</button>
         <span>uncomment this.thidInput to see the 3rd version...</span>
-      </Twarp>
+      </Twrap>
 
     )
   }

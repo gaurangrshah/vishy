@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Twarp from '../../utils/Twrap/Twrap';
+import Twrap from '../../utils/Twrap/Twrap';
 import RegComp from './_RegularComponent'
 import PureComp from './_PureComponent'
 import MemoComp from './_MemoComp'
@@ -28,7 +28,7 @@ export class ParentComp extends Component {
     console.log('Parent render');
     return (
 
-      <Twarp
+      <Twrap
         title="PureComponent"
         source="https://www.youtube.com/watch?v=YCRuTT31qR0"
       >
@@ -37,7 +37,7 @@ export class ParentComp extends Component {
         <MemoComp name={this.state.name} />
         <RegComp name={this.state.name} />
         <PureComp name={this.state.name} />
-      </Twarp>
+      </Twrap>
 
     )
   }

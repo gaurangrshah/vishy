@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Twarp from '../../utils/Twrap/Twrap';
+import Twrap from '../../utils/Twrap/Twrap';
 
 const Portals = () => {
   // return a reactDOM portal with our component as the first argument.
   return ReactDOM.createPortal(
-    <Twarp
+    <Twrap
       title="Portals"
       source="http://www.youtube.com/watch?v=HpHLa-5Wdys"
     >
@@ -13,7 +13,7 @@ const Portals = () => {
       <h1 style={{ background: 'green', margin: '2em' }}>This is a Portal</h1>
       <span> SCROLL UP and INSPECT Element: Mounted to "Portal-Root"</span>
 
-    </Twarp>,
+    </Twrap>,
     // 2nd argument to reactDOM.createPortal is the dom Node to mount to:
     document.getElementById('portal-root')
   )

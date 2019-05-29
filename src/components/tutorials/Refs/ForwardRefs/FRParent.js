@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Twarp from '../../../utils/Twrap/Twrap';
+import Twrap from '../../../utils/Twrap/Twrap';
 import FRInput from './FRInput'
 
 class FRParent extends Component {
@@ -15,13 +15,13 @@ class FRParent extends Component {
 
   render() {
     return (
-      <Twarp
+      <Twrap
         title="Forward-refs"
         source="http://www.youtube.com/watch?v=RLWniwmfdq4"
       >
         <FRInput ref={this.inputRef} />
         <button onClick={this.clickHandler}>Focus Input</button>
-      </Twarp>
+      </Twrap>
     )
   }
 }

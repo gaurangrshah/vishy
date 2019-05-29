@@ -1,13 +1,13 @@
 import React from 'react';
 import './App.css';
-import Twarp from "./components/utils/Twrap/Twrap"
+import Twrap from "./components/utils/Twrap/Twrap"
 import Counter from './components/tutorials/Counter/Counter';
 /* covers setState method in detail */
 import { ClickEvents } from './components/tutorials/ClickEvents/ClickEvents'
 /* covers event handling for functional & class components */
 import { EventBind } from './components/tutorials/EventBind/EventBind';
 import { ParentComponent } from './components/tutorials/MethodProps/MethodProps';
-import LocalStorageState from './components/utils/LocalState/LocalState';
+import LocalStorageState from './components/tutorials/LocalStorageTest/LocalStorageTest';
 import ConditionalRendering from './components/tutorials/ConditionalRendering/ConditionalRendering';
 import ListRendering from "./components/tutorials/ListRendering/ListRendering";
 import Styling from "./components/tutorials/Styling/Styling";
@@ -27,35 +27,47 @@ function App() {
   return (
     <div className="App">
       <header className="App-header">
-        <Twarp
+
+        <Twrap
           title=""
           source=""
           toggle={true}
         >
-        </Twarp>
+
+
+
+        </Twrap>
+
       </header>
+
       <Portals />
       <ClickCounter />
       <ErrorHandling />
-      <Twarp
+
+      <Twrap
         title="Newer"
       >
+
         <Portals />
         <KeyedRefs />
         <FRParent />
         <FocusInput />
         <RefsDemo />
-      </Twarp>
-      <Twarp
+
+      </Twrap>
+
+      <Twrap
         title="Intermediate"
       >
+
         <ParentComp />
         <Lifecycles />
         <FormControl2 />
         <FormControl />
-      </Twarp>
-      <Twarp
-        title="Basics"
+
+      </Twrap>
+      <Twrap
+        title="basics"
       >
         <Styling primary={true} />
         <ListRendering />
@@ -65,7 +77,7 @@ function App() {
         <EventBind />
         <ClickEvents />
         <Counter />
-      </Twarp>
+      </Twrap>
 
       <a
         className="App-link"

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Twarp from '../../../utils/Twrap/Twrap';
+import Twrap from '../../../utils/Twrap/Twrap';
 
 
 const MyInput = (props) => {
@@ -76,7 +76,7 @@ export class KeyedRef extends Component {
 
   render() {
     return (
-      <Twarp
+      <Twrap
         title="Refs-and-Dom"
         source="https://www.youtube.com/watch?v=tiytyGEodl0&t=1103s"
       >
@@ -96,7 +96,7 @@ export class KeyedRef extends Component {
         <>
           <input type="submit" value="submit" onClick={this.onClick} ref={input => this.submit = input} />
         </>
-      </Twarp>
+      </Twrap>
     )
   }
 }

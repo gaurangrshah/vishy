@@ -1,6 +1,6 @@
 import React from 'react';
 import Toggle from '../Toggle/Toggle';
-import Source from './Source/Source'
+import Source from './Source/Source';
 
 
 const Twrap = (props) => {
