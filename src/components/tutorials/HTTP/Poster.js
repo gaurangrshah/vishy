@@ -9,7 +9,9 @@ class Poster extends Component {
       // initialize form field values on state.
       userId: '',
       title: '',
-      body: ''
+      body: '',
+      success: null,
+      error: false
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -29,13 +31,28 @@ class Poster extends Component {
     // 1st: API Endpoint URL
     // 2nd: the data we want to send (this.state)
     axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
-      .then(response => console.log(response)) // log response if successful
-      .catch(error => console.warn(error)); // log error if unsuccessful
+      .then(response => {
+        this.setState({ success: true })
+        console.log(response)
+      }) // setState & log response if successful
+      .catch(error => {
+        this.setState({
+          error: true
+        })
+        console.warn(error)
+      }); // log error if unsuccessful
+
+    this.setState({
+      userId: '',
+      title: '',
+      body: '',
+
+    }) // reset form
   }
 
 
   render() {
-    const { userId, title, body } = this.state;
+    const { userId, title, body, success, error } = this.state;
     return (
       <form onSubmit={this.handleSubmit}>
         <p>
@@ -48,6 +65,10 @@ class Poster extends Component {
           <input type="text" name="body" value={body} onChange={this.handleChange} />
         </p>
         <input type="submit" value="submit" />
+        <p>
+          {success ? "Thank You For Your Submission" : null}
+        </p>
+        <p>{error ? "Sorry something seems to have gone terribly wrong" : null}</p>
       </form>
     )
   }
