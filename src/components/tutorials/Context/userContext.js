@@ -1,4 +1,4 @@
-import React, { createContext } from 'react'
+import { createContext } from 'react'
 
 // every component created with the React.createContext() has access to both a provider and a consumer.
 const UserContext = createContext('New Guy')

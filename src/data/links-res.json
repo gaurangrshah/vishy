@@ -1,0 +1,26 @@
+{
+  "resLinks": {
+    "reactLinks": [
+      {
+        "linkName": "Learn React",
+        "href": "https://reactjs.org"
+      },
+      {
+        "linkName": "React Cheat Sheet",
+        "href": "https://devhints.io/react"
+      },
+      {
+        "linkName": "React Cheat Sheet Tool",
+        "href": "https://reactcheatsheet.com"
+      },
+      {
+        "linkName": "React Patterns",
+        "href": "https://reactpatterns.com"
+      },
+      {
+        "linkName": "Awesome React",
+        "href": "https://github.com/enaqx/awesome-react"
+      }
+    ]
+  }
+}
