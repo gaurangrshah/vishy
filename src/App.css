@@ -66,3 +66,24 @@ mark.note {
 .primary {
   color: orangered;
 }
+
+
+.markdown-body {
+  font-size: 0.3em;
+  max-width: 80%;
+  text-align: left;
+  padding: 2em;
+}
+
+/* pre {
+  border: 2px solid red;
+  padding: 5px;
+}
+code {
+  font-size: 0.6em;
+  font-weight: 300;
+  font-style: italic;
+  word-break: break-all;
+  word-wrap: break-word;
+} */
+

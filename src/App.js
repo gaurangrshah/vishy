@@ -22,12 +22,11 @@ import Portals from './components/tutorials/Portals/Portals';
 import KeyedRefs from './components/tutorials/Refs/KeyedRefs/KeyedRef';
 import ErrorHandling from './components/tutorials/ErrorHandlinPhases/ErrorHandling';
 import ClickCounter from './components/tutorials/HOC/ClickCounter';
-import ClickCounter2 from './components/tutorials/RenderProps/ClickCounter2';
-import HoverCounter2 from './components/tutorials/RenderProps/HoverCounter2';
-import User from './components/tutorials/RenderProps/User';
-import Counter2 from './components/tutorials/RenderProps/Counter2';
-import Counter3 from './components/tutorials/RenderProps/Counter3';
-
+import RenderPropsRender from './components/tutorials/RenderProps/RenderPropsRender';
+import MDViewer from './components/tutorials/MarkdownPrvw/MDViewer';
+import UserApp from './components/tutorials/Context/UserApp';
+import Getter from './components/tutorials/HTTP/Getter';
+import Poster from './components/tutorials/HTTP/Poster';
 
 function App() {
   return (
@@ -35,39 +34,22 @@ function App() {
       <header className="App-header">
 
         <Twrap
-          title="RenderProps"
-          source="http://www.youtube.com/watch?v=NdapMDgNhtE"
+          title="poster"
+          source="http://www.youtube.com/watch?v=x9UEDRbLhJE"
           toggle={true}
         >
-          {/* // inside render props, our function takes in our two arguments, count & incrementCount */}
-
-          <Counter3>
-            {(count, incrementCount) => (
-              <ClickCounter2
-                count={count}
-                incrementCount={incrementCount}
-              />
-            )}
-          </Counter3>
-
-          <Counter2
-            renderCounter={(count, incrementCount) => (
-              <HoverCounter2
-                count={count}
-                incrementCount={incrementCount}
-              />
-            )}
-          />
-
-          <User render={(isLoggedIn) => isLoggedIn ? 'Hello Tornado' : 'Hello Guest'} />
-
+          <Poster />
         </Twrap>
 
       </header>
 
+      <Getter />
+      <UserApp />
+      <RenderPropsRender />
       <Portals />
       <ClickCounter name="this guy" />
       <ErrorHandling />
+      <MDViewer />
 
 
       <Twrap
