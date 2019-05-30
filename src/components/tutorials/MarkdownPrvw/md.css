@@ -58,6 +58,8 @@
   font-size: 16px;
   line-height: 1.5;
   word-wrap: break-word;
+  max-height: 40vh;
+  overflow: scroll;
 }
 
 .markdown-body .pl-c {
@@ -219,7 +221,7 @@
 .markdown-body kbd,
 .markdown-body pre {
   font-family: monospace,monospace;
-  font-size: 1em;
+  font-size: 0.6;
 }
 
 .markdown-body hr {
@@ -700,7 +702,7 @@
 .markdown-body pre>code {
   background: transparent;
   border: 0;
-  font-size: 100%;
+  font-size: 70%;
   margin: 0;
   padding: 0;
   white-space: pre;

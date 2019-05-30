@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios';
+import Twrap from '../../utils/Twrap/Twrap';
 
 class Poster extends Component {
   constructor(props) {
@@ -54,22 +55,27 @@ class Poster extends Component {
   render() {
     const { userId, title, body, success, error } = this.state;
     return (
-      <form onSubmit={this.handleSubmit}>
-        <p>
-          <input type="text" name="userId" value={userId} onChange={this.handleChange} />
-        </p>
-        <p>
-          <input type="text" name="title" value={title} onChange={this.handleChange} />
-        </p>
-        <p>
-          <input type="text" name="body" value={body} onChange={this.handleChange} />
-        </p>
-        <input type="submit" value="submit" />
-        <p>
-          {success ? "Thank You For Your Submission" : null}
-        </p>
-        <p>{error ? "Sorry something seems to have gone terribly wrong" : null}</p>
-      </form>
+      <Twrap
+        title="poster"
+        source="http://www.youtube.com/watch?v=x9UEDRbLhJE"
+      >
+        <form onSubmit={this.handleSubmit}>
+          <p>
+            <input type="text" name="userId" value={userId} onChange={this.handleChange} />
+          </p>
+          <p>
+            <input type="text" name="title" value={title} onChange={this.handleChange} />
+          </p>
+          <p>
+            <input type="text" name="body" value={body} onChange={this.handleChange} />
+          </p>
+          <input type="submit" value="submit" />
+          <p>
+            {success ? "Thank You For Your Submission" : null}
+          </p>
+          <p>{error ? "Sorry something seems to have gone terribly wrong" : null}</p>
+        </form>
+      </Twrap>
     )
   }
 }

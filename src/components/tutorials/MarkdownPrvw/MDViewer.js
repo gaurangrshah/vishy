@@ -32,11 +32,10 @@ class MDViewer extends Component {
         title="mdviewer"
         source="https://stackoverflow.com/questions/42928530/how-do-i-load-a-markdown-file-into-a-react-component"
       >
-
         <div className="markdown-body">
-          <article dangerouslySetInnerHTML={{ __html: markdown }}></article>
+          <article dangerouslySetInnerHTML={{ __html: markdown }}>
+          </article>
         </div>
-
       </Twrap>
     )
   }

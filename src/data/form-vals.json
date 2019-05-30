@@ -1,0 +1,8 @@
+{
+  "name": "formName",
+  "formVals": {
+    "input1": "val1",
+    "input2": "val2",
+    "input3": "val3"
+  }
+}

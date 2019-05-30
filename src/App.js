@@ -28,7 +28,8 @@ import UserApp from './components/tutorials/Context/UserApp';
 import Getter from './components/tutorials/HTTP/Getter';
 import Poster from './components/tutorials/HTTP/Poster';
 import HeaderPortal from './components/Portals/Header/HeaderPortal';
-
+import FormContextWrapper from './components/PlugForm/formContext';
+import linkRes from './data/links-res.json';
 
 function App() {
   return (
@@ -38,15 +39,20 @@ function App() {
       <header className="App-header">
 
         <Twrap
-          title="poster"
-          source="http://www.youtube.com/watch?v=x9UEDRbLhJE"
+          title=""
+          source="http://"
           toggle={true}
         >
-          <Poster />
+          {/* <FormContextWrapper>
+            {linkRes.resLinks}
+          </FormContextWrapper> */}
+
+
         </Twrap>
 
       </header>
 
+      <Poster />
       <Getter />
       <UserApp />
       <RenderPropsRender />
@@ -59,7 +65,6 @@ function App() {
       <Twrap
         title="all previous"
       >
-        <Portals />
         <KeyedRefs />
         <FRParent />
         <FocusInput />

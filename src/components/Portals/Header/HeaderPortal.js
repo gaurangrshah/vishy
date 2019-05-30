@@ -10,8 +10,11 @@ const HeaderPortal = () => {
 
       <ul style={{
         display: 'flex',
-        justifyContent: 'space-between',
-        listStyle: 'none'
+        justifyContent: 'space-evenly',
+        listStyle: 'none',
+        padding: '1em',
+        width: '100vw',
+        flexBasis: '0 1 40%'
       }}>
 
         <LinksComponent links={linkRes.resLinks.reactLinks} />
