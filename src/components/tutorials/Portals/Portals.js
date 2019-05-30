@@ -47,6 +47,14 @@ const Portals = () => {
             rel="noopener noreferrer"
           > Awesome React </a>
         </li>
+        <li>
+          <a
+            href="https://reactpatterns.com"
+            className="App-link"
+            target="_blank"
+            rel="noopener noreferrer"
+          > React Patterns </a>
+        </li>
       </ul>
     </Twrap>,
     // 2nd argument to reactDOM.createPortal is the dom Node to mount to:
