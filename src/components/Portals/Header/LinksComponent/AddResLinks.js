@@ -1,49 +1,45 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import Twrap from '../../../utils/Twrap/Twrap';
 import LinksComponent from './LinksComponent';
-import axios from 'axios';
+import { useData } from '../../../utils/useData/useData'
 
-// AddResLinks is based on PlugForm useForm
+// used to pull links from local server endpoint and supply them to <LinksComponent links={arr}/>
+// uses useData utility to pull in data and maintain it.
+
+// 🚧 started work on rendering inputs in renderInput.js, but it needs logic to pull from server, possibly use: useData to do that.
 
 const AddResLinks = () => {
 
-  const [data, setData] = useState({ links: {} });
+  const endpoint = "http://localhost:3000/resLinks/";
+  const { data, updateData, callback } = useData(endpoint, null, { links: {} })
+  // useData takes a callback, currently not using it, but just rendering it back.
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const response = await axios(
-        'http://localhost:3000/resLinks/',
-      )
-      setData({ links: response.data[0].reactLinks })
-    }
-    fetchData()
-  }, [])
+  // console.log('adddata: ', { data, updateData, callback })
+
+
+  const RenderResLinks = (obj) => {
+    //traverses object returns an arry of links, which then are used by <linkscomponent>
+    let links = Object.values(obj)
+
+    // console.log('links', { links })
+
+    return links;
+  }
 
   return (
     <Twrap
       title="resLinks"
-      toggle={true}
+      toggle={false}
       sources="n"
+      msg="requires local server running"
     >
 
-      {/* {console.log('data')} */}
-
-      {
-        Object.values(data.links).map((item, i) => {
-          return (
-            <a
-              key={i}
-              href={item['href']}
-              target="blank"
-              rel="nofollow"
-            >
-              {item['linkName']}
-            </a>
-          )
-        })
-      }
-
-      <LinksComponent />
+      <LinksComponent
+        links={RenderResLinks(data.links)}
+        // passing in the function directly, so that the result is returned to props.links
+        updateLinks={updateData}
+      // passing in updateData to see if we can work with data from linksComponent.
+      />
     </Twrap>
   )
 }

@@ -1,6 +1,5 @@
 import React from "react";
 import { useInput } from '../utils/useInput/useInput';
-import Twarp from '../utils/Twrap/Twrap';
 
 
 export function NameForm(props) {
@@ -14,22 +13,20 @@ export function NameForm(props) {
     resetLastName();
   }
   return (
-    <Twarp
-      title="useForm-working"
-    >
-
-      <form onSubmit={handleSubmit}>
-        <label>
-          First Name:
+    <form onSubmit={handleSubmit}>
+      <label>
+        First Name:
         <input type="text" {...bindFirstName} />
-        </label>
-        <label>
-          Last Name:
+      </label>
+      <label>
+        Last Name:
         <input type="text" {...bindLastName} />
-        </label>
-        <input type="submit" value="Submit" />
-      </form>
-
-    </Twarp>
+      </label>
+      <input type="submit" value="Submit" />
+    </form>
   );
+
 }
+
+
+// using in StdModal.

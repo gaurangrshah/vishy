@@ -3,11 +3,11 @@ import jsonVals from "../../data/form-vals.json";
 
 const useForm = () => {
   const [vals, setVals] = useState(jsonVals.formVals);
-  const updateVals = newVals => setVals({ newVals });
+  const updateVals = (newVals) => setVals({ newVals });
   return { vals, updateVals };
 };
 
-export default function Form() {
+export default function Enput() {
   const { vals, updateVals } = useForm();
   console.log('jsonVals: ', vals);
 

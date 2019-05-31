@@ -14,6 +14,7 @@ const Twrap = (props) => {
         <div className="container">
           <h3>{props.title}</h3>
           {props.children}<br />
+          {(props.msg) ? <p>{props.msg}</p> : null }
           {(props.source) ? <Source title={props.title} source={props.source} /> : <mark>Sorry no Sources Found</mark>}
         </div>
       </Toggle>

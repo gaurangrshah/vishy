@@ -39,23 +39,25 @@ function App() {
 
       <HeaderPortal />
       <header className="App-header">
+        <StdModal />
 
         {/* <Twrap
           title=""
           source="#"
           toggle={true}
         > */}
-        <StdModal />
 
         {/* </Twrap> */}
 
       </header>
       <ResLinks />
       <LocalNameForm />
-      <NameForm />
-
-      <NameForm />
-
+      <Twrap
+        title="useForm--working"
+      >
+        <NameForm />
+        {/* using nameForm in stdModal, removed wrapping from within */}
+      </Twrap>
       <Poster />
       <Getter />
       <UserApp />

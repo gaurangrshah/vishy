@@ -5,7 +5,7 @@ import { NameForm } from '../../PlugForm/useForm';
 
 export const StdModal = () => {
   return (
-    <StrapModal buttonLabel="Open Me" modalTitle="Modal Modal Yo" isOpen={true}>
+    <StrapModal buttonLabel="Open Me" modalTitle="Test Form Add Inputs" isOpen={true}>
 
       <NameForm />
 
