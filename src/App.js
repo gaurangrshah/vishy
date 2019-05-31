@@ -28,8 +28,7 @@ import UserApp from './components/tutorials/Context/UserApp';
 import Getter from './components/tutorials/HTTP/Getter';
 import Poster from './components/tutorials/HTTP/Poster';
 import HeaderPortal from './components/Portals/Header/HeaderPortal';
-import FormContextWrapper from './components/PlugForm/formContext';
-import linkRes from './data/links-res.json';
+import { NameForm } from './components/PlugForm/useForm';
 
 function App() {
   return (
@@ -43,9 +42,8 @@ function App() {
           source="http://"
           toggle={true}
         >
-          {/* <FormContextWrapper>
-            {linkRes.resLinks}
-          </FormContextWrapper> */}
+
+          <NameForm />
 
 
         </Twrap>
