@@ -29,6 +29,7 @@ import Getter from './components/tutorials/HTTP/Getter';
 import Poster from './components/tutorials/HTTP/Poster';
 import HeaderPortal from './components/Portals/Header/HeaderPortal';
 import { NameForm } from './components/PlugForm/useForm';
+import { LocalNameForm } from './components/PlugForm/useFormLocalState';
 
 function App() {
   return (
@@ -42,13 +43,13 @@ function App() {
           source="http://"
           toggle={true}
         >
-
-          <NameForm />
-
+          <LocalNameForm />
 
         </Twrap>
 
       </header>
+
+      <NameForm />
 
       <Poster />
       <Getter />
