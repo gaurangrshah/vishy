@@ -21,12 +21,13 @@ export const mapLinks = (arr) => {
   return linked
 }
 
-const LinksComponent = ({ links }) => {
+const LinksComponent = ({ links, twrapMsg }) => {
   return (
     (links) ? (
       mapLinks(links)
     ) : (
-        null
+        null // working on setting messge thru twrap msg
+
       )
   )
 }

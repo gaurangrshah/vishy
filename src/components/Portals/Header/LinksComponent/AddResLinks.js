@@ -8,7 +8,7 @@ import { useData } from '../../../utils/useData/useData'
 
 // 🚧 started work on rendering inputs in renderInput.js, but it needs logic to pull from server, possibly use: useData to do that.
 
-const AddResLinks = () => {
+const AddResLinks = (props) => {
 
   const endpoint = "http://localhost:3000/resLinks/";
   const { data, updateData, callback } = useData(endpoint, null, { links: {} })
@@ -31,14 +31,15 @@ const AddResLinks = () => {
       title="resLinks"
       toggle={false}
       sources="n"
-      msg="requires local server running"
+      msg={props.msg || "requires local server running"}
     >
 
       <LinksComponent
         links={RenderResLinks(data.links)}
         // passing in the function directly, so that the result is returned to props.links
         updateLinks={updateData}
-      // passing in updateData to see if we can work with data from linksComponent.
+        // passing in updateData to see if we can work with data from linksComponent.
+        twrapMsg={props.msg}
       />
     </Twrap>
   )
