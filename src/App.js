@@ -30,6 +30,8 @@ import Poster from './components/tutorials/HTTP/Poster';
 import HeaderPortal from './components/Portals/Header/HeaderPortal';
 import { NameForm } from './components/PlugForm/useForm';
 import { LocalNameForm } from './components/PlugForm/useFormLocalState';
+import ResLinks from './components/Portals/Header/LinksComponent/AddResLinks';
+import { StdModal } from './components/Portals/Modal/StdModal';
 
 function App() {
   return (
@@ -38,17 +40,18 @@ function App() {
       <HeaderPortal />
       <header className="App-header">
 
-        <Twrap
+        {/* <Twrap
           title=""
-          source="http://"
+          source="#"
           toggle={true}
-        >
-          <LocalNameForm />
+        > */}
+        <StdModal />
 
-        </Twrap>
+        {/* </Twrap> */}
 
       </header>
-
+      <ResLinks />
+      <LocalNameForm />
       <NameForm />
 
       <Poster />

@@ -1,15 +1,19 @@
 {
+  "id": 1,
   "name": "formName",
   "inputs": [
     {
+      "id": 1,
       "name": "input1",
       "value": ""
     },
     {
+      "id": 2,
       "name": "input2",
       "value": ""
     },
     {
+      "id": 3,
       "name": "input3",
       "value": ""
     }

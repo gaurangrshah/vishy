@@ -8,6 +8,7 @@ class Poster extends Component {
 
     this.state = {
       // initialize form field values on state.
+      id: 'form5',
       userId: '',
       title: '',
       body: '',
@@ -32,6 +33,8 @@ class Poster extends Component {
     // 1st: API Endpoint URL
     // 2nd: the data we want to send (this.state)
     axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
+      // axios.post('http://localhost:3000/nameform', this.state)
+
       .then(response => {
         this.setState({ success: true })
         console.log(response)
@@ -47,7 +50,6 @@ class Poster extends Component {
       userId: '',
       title: '',
       body: '',
-
     }) // reset form
   }
 

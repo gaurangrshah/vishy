@@ -15,7 +15,7 @@ export default function Form() {
     return () => {
       updateVals(vals)
     };
-  }, [vals, updateVals])
+  }, [vals])
 
   const handleChange = (e) => {
 
@@ -23,7 +23,8 @@ export default function Form() {
   }
   return (
     <form>
-      {vals.map((val, i) => {
+      {console.log(vals)}
+      {/* {vals.map((val, i) => {
         console.log(val.name)
         return (
           <input
@@ -35,7 +36,7 @@ export default function Form() {
             placeholder={val.value}
           />
         );
-      })}
+      })} */}
     </form>
   );
 }

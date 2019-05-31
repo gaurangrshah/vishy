@@ -1,13 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const PortalWrapper = ({ children }) => {
+const HeaderPortalWrapper = ({ children }) => {
 
   return ReactDOM.createPortal(
     <div style={{
       background: 'gray',
       position: 'fixed',
-      zIndex: '1',
+      zIndex: '2',
+      bottom: '0'
     }}>
       {children}
     </div >,
@@ -15,4 +16,4 @@ const PortalWrapper = ({ children }) => {
   )
 }
 
-export default PortalWrapper
+export default HeaderPortalWrapper

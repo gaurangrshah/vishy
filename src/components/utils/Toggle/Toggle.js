@@ -1,15 +1,20 @@
 import React, { Component } from "react";
+import {Button } from 'reactstrap';
 
 export default class Toggle extends Component {
   constructor(props) {
     super(props)
 
     this.state = {
-      on: this.props.toggle || false
+      on: this.props.toggle || false,
     };
   }
 
-
+  handleKeyUp = (e) => {
+    this.setState({
+      on: !this.state.on
+    });
+  }
 
 
   toggle = () => {
@@ -21,11 +26,11 @@ export default class Toggle extends Component {
   render() {
     return (
       <>
-        {this.state.on && <h2>{this.props.children}</h2>}
+        {this.state.on && <div>{this.props.children}</div>}
         {/* this method preforms the conditional check and renders if both items
         hold true. So only if the component has children and the state of
         "on: true" will we render the children. */}
-        <button onClick={this.toggle}>{this.props.title}</button>
+        <Button onClick={this.toggle} onKeyUp={this.handleKeyUp}>{this.props.title}</Button>
       </>
     );
   }

@@ -1,5 +1,6 @@
 import React from 'react';
 import useLocalStorageState from '../utils/LocalState/LocalState';
+import Twrap from '../utils/Twrap/Twrap';
 // import { handleSaveToPC } from '../utils/downloadToJSON';
 
 export function LocalNameForm() {
@@ -22,16 +23,20 @@ export function LocalNameForm() {
 
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        First Name:
+    <Twrap
+      title="useFormLocalState"
+    >
+      <form onSubmit={handleSubmit}>
+        <label>
+          First Name:
         <input type="text" {...bindFirstName} />
-      </label>
-      <label>
-        Last Name:
+        </label>
+        <label>
+          Last Name:
         <input type="text" {...bindLastName} />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+    </Twrap>
   );
 }

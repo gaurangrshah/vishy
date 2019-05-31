@@ -1,12 +1,18 @@
 import React from 'react'
-import PortalWrapper from '../PortalWrapper'
+import HeaderPortalWrapper from '../HeaderPortalWrapper'
 import LinksComponent from './LinksComponent/LinksComponent';
 import linkRes from '../../../data/links-res.json';
 
 
 const HeaderPortal = () => {
+
+  let links = [];
+  Object.values(linkRes.resLinks[0].reactLinks).map((item, i) => {
+    return links.push(item)
+  })
+
   return (
-    <PortalWrapper>
+    <HeaderPortalWrapper>
 
       <ul style={{
         display: 'flex',
@@ -17,11 +23,11 @@ const HeaderPortal = () => {
         flexBasis: '0 1 40%'
       }}>
 
-        <LinksComponent links={linkRes.resLinks.reactLinks} />
+        <LinksComponent links={links} />
 
       </ul>
 
-    </PortalWrapper >
+    </HeaderPortalWrapper >
   )
 }
 

@@ -1,7 +1,6 @@
 import React from "react";
-import { useInput } from './useInput';
-import linkRes from '../../data/form-vals.json'
-
+import { useInput } from '../utils/useInput/useInput';
+import Twarp from '../utils/Twrap/Twrap';
 
 
 export function NameForm(props) {
@@ -15,16 +14,22 @@ export function NameForm(props) {
     resetLastName();
   }
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        First Name:
+    <Twarp
+      title="useForm-working"
+    >
+
+      <form onSubmit={handleSubmit}>
+        <label>
+          First Name:
         <input type="text" {...bindFirstName} />
-      </label>
-      <label>
-        Last Name:
+        </label>
+        <label>
+          Last Name:
         <input type="text" {...bindLastName} />
-      </label>
-      <input type="submit" value="Submit" />
-    </form>
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
+
+    </Twarp>
   );
 }

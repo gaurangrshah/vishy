@@ -7,3 +7,5 @@ export const handleSaveToPC = jsonData => {
   link.href = url;
   link.click();
 }
+
+// pass in an object as jsonData

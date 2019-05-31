@@ -30,7 +30,7 @@ class Getter extends Component {
     axios.get('https://jsonplaceholder.typicode.com/posts')
       // invoking the get method from axios, which takes one arg: the API endpoint for the request
       .then(response => { // if the response is successful, then gets called, and handles the response
-        console.log(response) // logging the repsonse to the console.
+        // console.log(response) // logging the repsonse to the console.
         this.setState({ posts: response.data }) // setting state with data from request response.
       })
       .catch(error => { // if there is an error, handle error
@@ -47,8 +47,8 @@ class Getter extends Component {
 
     return (
       <Twrap
-      title="getter"
-      source="http://www.youtube.com/watch?v=NEYrSUM4Umw"
+        title="getter"
+        source="http://www.youtube.com/watch?v=NEYrSUM4Umw"
       >
 
         <button onClick={this.renderPosts}>List {this.state.posts.length} Posts</button>
