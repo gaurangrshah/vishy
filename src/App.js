@@ -54,6 +54,8 @@ function App() {
       <LocalNameForm />
       <NameForm />
 
+      <NameForm />
+
       <Poster />
       <Getter />
       <UserApp />
