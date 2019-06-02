@@ -10,7 +10,7 @@ import { useData } from '../../../utils/useData/useData'
 const GetResLinks = () => {
 
   const endpoint = "http://localhost:3000/reactLinks/";
-  const { data, updateData, callback } = useData(endpoint, null)
+  const { data, updateData } = useData(endpoint, null)
   // useData takes a callback, currently not using it, but just rendering it back.
 
   // console.log('adddata: ', { data, updateData, callback })

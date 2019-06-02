@@ -49,7 +49,7 @@ const LinksComponent = (props) => {
       }
       <StdModal
         // isOpen={() => !this.state.modal}
-        toggleButtonLabel="Add New Links"
+        toggleButtonLabel="Add New Link"
         children={
           <LinkForm
             nextId={(links) ? links.length + 1 : null}
