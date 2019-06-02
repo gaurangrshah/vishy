@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import { useResp } from './useCatcher';
+// import { useResp } from './useCatcher';
+// 🚧 implement useCatcher for hooked error handling.
 import axios from 'axios';
 
 export const useData = (endpoint, callback, initialValue) => {
@@ -9,14 +10,15 @@ export const useData = (endpoint, callback, initialValue) => {
 
   // const [resp, updateResp] = useResp();
   useEffect(() => {
-    console.log('data effect ran')
+    console.log('data mounted')
     const fetchData = async () => {
 
-      console.log('fetching..🤞')
+      // console.log('fetching..🤞')
 
       const response = await axios(endpoint)
         .then(response => {
           console.log('success response', { response })
+
           // updateResp(response)
           // returns response after success,
           return response

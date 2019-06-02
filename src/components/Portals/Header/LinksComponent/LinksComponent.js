@@ -4,12 +4,12 @@ import { StdModal } from '../../Modal/StdModal';
 
 
 export const mapLinks = (arr) => {
-  console.log('😬', Array.isArray(arr))
+  // console.log(Array.isArray(arr))
   // console.log(typeof arr)
-  console.log('links:', arr)
+  // console.log('links:', arr)
 
   const linked = arr.map((item, index) => {
-    // console.log('🚧', { item })
+    // console.log(item)
     return (
       <li
         key={index}
