@@ -28,7 +28,7 @@ import UserApp from './components/tutorials/Context/UserApp';
 import Getter from './components/tutorials/HTTP/Getter';
 import Poster from './components/tutorials/HTTP/Poster';
 import HeaderPortal from './components/Portals/Header/HeaderPortal';
-import { NameForm } from './components/PlugForm/useForm';
+import NameForm from './components/PlugForm/useForm';
 import { LocalNameForm } from './components/PlugForm/useFormLocalState';
 import GetResLinks from './components/Portals/Header/LinksComponent/GetResLinks';
 import { StdModal } from './components/Portals/Modal/StdModal';
@@ -49,14 +49,14 @@ function App() {
       <HeaderPortal />
       <header className="App-header">
 
-        <StdModal buttonLabel="Open Me" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
+        <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
 
       </header>
-      <StdModal buttonLabel="Open Me" modalTitle="ArrCounterEx" children={<ArrCounter />} />
-      <StdModal buttonLabel="Open Me" modalTitle="HookCounterFinal" children={<HookCounterFinal />} />
-      <StdModal buttonLabel="Open Me" modalTitle="ClassCounterFinal" children={<ClassCounterFinal />} />
-      <StdModal buttonLabel="Open Me" modalTitle="ObjCounterEx" children={<ObjCounter />} />
-      <StdModal buttonLabel="Open Me" modalTitle="ClassCounter & Functional Counter" children={<><ClassCounter /> <FuncCounter /><FuncCounterWPrevState /><ObjCounter /></>} />
+      <StdModal buttonLabel="ArrCounterEx" modalTitle="ArrCounterEx" children={<ArrCounter />} />
+      <StdModal buttonLabel="HookCounterFinal" modalTitle="HookCounterFinal" children={<HookCounterFinal />} />
+      <StdModal buttonLabel="ClassCounterFinal" modalTitle="ClassCounterFinal" children={<ClassCounterFinal />} />
+      <StdModal buttonLabel="ObjCounterEx" modalTitle="ObjCounterEx" children={<ObjCounter />} />
+      <StdModal buttonLabel="Counter Examples" modalTitle="ClassCounter & Functional Counter" children={<><ClassCounter /> <FuncCounter /><FuncCounterWPrevState /><ObjCounter /></>} />
       <LocalNameForm />
       <Twrap
         title="useForm-duped"

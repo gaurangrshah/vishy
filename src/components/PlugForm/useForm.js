@@ -2,7 +2,7 @@ import React from "react";
 import { useInput } from '../utils/useInput/useInput';
 
 
-export function NameForm(props) {
+export default (props) => {
   const { value: firstName, bind: bindFirstName, reset: resetFirstName } = useInput('');
   const { value: lastName, bind: bindLastName, reset: resetLastName } = useInput('');
 
