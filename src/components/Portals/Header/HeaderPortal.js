@@ -37,7 +37,9 @@ const HeaderPortal = () => {
         <LinksComponent
           // links={links[0]} {/* used with rendering from local data. */}
           links={data}
-        //🚦  updateLinks={updateData}
+
+        // 🚦 updateData={updateData}
+
         />
 
       </ul>

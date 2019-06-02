@@ -16,14 +16,14 @@ const GetResLinks = () => {
 
   // console.log('adddata: ', { data, updateData, callback })
 
-  // console.log('📜', { data })
+  console.log('📜', { data })
 
   return (
 
     <LinksComponent
       links={data}
-      // passing in the function directly, so that the result is returned as props.links
-      updateLinks={updateData}
+    // passing in the function directly, so that the result is returned as props.links
+    // updateLinks={updateData}
     // passing in updateData to see if we can work with data from linksComponent.
     />
   )

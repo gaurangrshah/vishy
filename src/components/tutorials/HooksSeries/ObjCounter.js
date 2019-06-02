@@ -1,5 +1,4 @@
 import React, { useState } from 'react'
-import CodeWrap from '../../utils/codewrap';
 
 function ObjCounter() {
   // using object as the default value for name defined directly w/in useState
@@ -18,7 +17,7 @@ function ObjCounter() {
       <input type="text" value={name.lastName} onChange={e => setName({ lastName: e.target.value })} />
       <p> to visualize the state issue from the inputs this is the output of the name state variable:</p>
 
-      <mark>name1: {`firstName:${name.firstName}, lastName:${name.lastName}`}</mark><br/>
+      <mark>name1: {`firstName:${name.firstName}, lastName:${name.lastName}`}</mark><br />
 
       <p> we can clearly see that when we type in one input we are essentially removing the other property from the state variable.</p>
 
@@ -28,10 +27,10 @@ function ObjCounter() {
 
       {/* using the spread operator to spread out prev name values then the relevant updates */}
       <input type="text" value={name.firstName2} onChange={e => setName({ ...name, firstName2: e.target.value })} />
-      <input type="text" value={name.lastName2} onChange={e => setName({ ...name, lastName2: e.target.value })} /><br/>
+      <input type="text" value={name.lastName2} onChange={e => setName({ ...name, lastName2: e.target.value })} /><br />
 
-      <mark>name2: {`firstName2:${name.firstName2}, lastName2:${name.lastName2}`}</mark> <br/>
-      <p>using the spread operator to spread out the '...prevState' and manually merging our updates in-line with:</p> <br/><mark>onChange={`e => setName({...name, firstName: e.target.value})`}</mark> <br/>
+      <mark>name2: {`firstName2:${name.firstName2}, lastName2:${name.lastName2}`}</mark> <br />
+      <p>using the spread operator to spread out the '...prevState' and manually merging our updates in-line with:</p> <br /><mark>onChange={`e => setName({...name, firstName: e.target.value})`}</mark> <br />
       <p>this issue/fix applies to class components as well, in cases where the shallow auto-merge may fail.</p>
     </div>
   )

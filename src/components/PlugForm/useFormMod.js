@@ -12,12 +12,13 @@ export const LinkForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const payload = { id: props.nextId, linkName, href }
+    const payload = { id: nextId, linkName, href }
     // const loaded = {
 
     //   id: 1, reactLinks: [{ ...payload }]
 
     // }
+    // updateLinks(payload)
     alert(`Submitting Name ${JSON.stringify(payload)}`);
 
 
@@ -49,9 +50,12 @@ export const LinkForm = (props) => {
 
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={(e) => {
+      handleSubmit(e)
+    }}>
       <label>
-        id: {props.nextId}
+        id: {props.nextId || ''}
+        {/* using math.random to generate a random num btw. 1 - 10, as a fallback */}
         <input type="text" defaultValue={props.nextId} hidden />
       </label>
 
