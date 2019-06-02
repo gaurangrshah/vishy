@@ -21,9 +21,9 @@ export const useSetter = (payload) => {
       const postData = async () => {
         console.log('settingResponseawat')
 
-        const endpoint = 'https://localhost:3000/reactLinks'
+        // const endpoint = 'http://localhost:3000/reactLinks'
+        const endpoint = 'https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks'
         const response = await axios.post(endpoint, payload)
-          // need to add header?!?
           .then(resposne => response)
           .then(console.log('success'))
           .catch(err => console.log(err))

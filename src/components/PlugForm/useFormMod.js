@@ -10,21 +10,15 @@ export const LinkForm = (props) => {
   const { value: linkName, bind: bindlinkName, reset: resetlinkName } = useInput('');
   const { value: href, bind: bindHref, reset: resetHref } = useInput('');
 
-
-  // const [sendData, setSendData] = useSetter()
-  // console.log('usingData', { sendData })
-
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const payload = { id: props.nextId, linkName, href }
-    const loaded = {
+    // const loaded = {
 
-      id: 1, reactLinks: [{ ...payload }]
+    //   id: 1, reactLinks: [{ ...payload }]
 
-    }
+    // }
     alert(`Submitting Name ${JSON.stringify(payload)}`);
-    // setSendData({ ...sendData, payload })
 
 
     let mount = true;
@@ -33,9 +27,9 @@ export const LinkForm = (props) => {
       const postData = async () => {
         console.log('settingResponseawait')
 
-        const endpoint = 'http://localhost:3000/reactLinks/'
+        // const endpoint = 'http://localhost:3000/reactLinks'
+        const endpoint = 'https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/'
         const response = await axios.post(endpoint, payload)
-          // need to add header?!?
           .then(response => response)
           .then(console.log('success'))
           .catch(err => console.log(err))
