@@ -39,7 +39,7 @@ import ObjCounter from './components/tutorials/HooksSeries/ObjCounter'
 import ArrCounter from './components/tutorials/HooksSeries/ArrCounter'
 import ClassCounterFinal from './components/tutorials/HooksSeries/ClassCounterFinal'
 import HookCounterFinal from './components/tutorials/HooksSeries/HookCounterFinal'
-
+import LoginWidget from './components/tutorials/Login/LoginWidget';
 
 
 function App() {
@@ -50,6 +50,7 @@ function App() {
       <header className="App-header">
 
         <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
+        <StdModal buttonLabel="Context-Login" modalTitle="Context Login Widget" children={<LoginWidget />} />
 
       </header>
       <StdModal buttonLabel="ArrCounterEx" modalTitle="ArrCounterEx" children={<ArrCounter />} />
