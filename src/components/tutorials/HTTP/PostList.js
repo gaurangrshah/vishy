@@ -1,14 +1,20 @@
 import React from 'react';
 
-export default ({ posts }) => {
-  return (
+export default ({ renderArr, children, errorMsg }) => {
+  return (renderArr) ? (
     <ul>
-      {posts.map(post => {
+      {renderArr.map((item, i) => {
         return (
-          <li key={post.id}> {post.title} </li>
+          <li key={item.id || i}>
+            <span> {item.title}</span>
+            <span>{item.body ? item.body : null}</span>
+            <span>{children ? children : null}</span>
+          </li>
         )
 
       })}
     </ul>
-  )
+  ) : (
+      <p>{errorMsg || "error displaying your data."}</p>
+    )
 }

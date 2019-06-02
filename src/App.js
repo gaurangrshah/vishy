@@ -30,8 +30,17 @@ import Poster from './components/tutorials/HTTP/Poster';
 import HeaderPortal from './components/Portals/Header/HeaderPortal';
 import { NameForm } from './components/PlugForm/useForm';
 import { LocalNameForm } from './components/PlugForm/useFormLocalState';
-import ResLinks from './components/Portals/Header/LinksComponent/AddResLinks';
+import GetResLinks from './components/Portals/Header/LinksComponent/GetResLinks';
 import { StdModal } from './components/Portals/Modal/StdModal';
+import ClassCounter from './components/tutorials/HooksSeries/ClassCounterEx'
+import FuncCounter from './components/tutorials/HooksSeries/FuncCounterEx'
+import FuncCounterWPrevState from './components/tutorials/HooksSeries/FuncCounterWPrevState'
+import ObjCounter from './components/tutorials/HooksSeries/ObjCounter'
+import ArrCounter from './components/tutorials/HooksSeries/ArrCounter'
+import ClassCounterFinal from './components/tutorials/HooksSeries/ClassCounterFinal'
+import HookCounterFinal from './components/tutorials/HooksSeries/HookCounterFinal'
+
+
 
 function App() {
   return (
@@ -39,19 +48,22 @@ function App() {
 
       <HeaderPortal />
       <header className="App-header">
-        <StdModal />
 
-        {/* <Twrap
-          title=""
-          source="#"
-          toggle={true}
-        > */}
-
-        {/* </Twrap> */}
+        <StdModal buttonLabel="Open Me" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
 
       </header>
-      <ResLinks />
+      <StdModal buttonLabel="Open Me" modalTitle="ArrCounterEx" children={<ArrCounter />} />
+      <StdModal buttonLabel="Open Me" modalTitle="HookCounterFinal" children={<HookCounterFinal />} />
+      <StdModal buttonLabel="Open Me" modalTitle="ClassCounterFinal" children={<ClassCounterFinal />} />
+      <StdModal buttonLabel="Open Me" modalTitle="ObjCounterEx" children={<ObjCounter />} />
+      <StdModal buttonLabel="Open Me" modalTitle="ClassCounter & Functional Counter" children={<><ClassCounter /> <FuncCounter /><FuncCounterWPrevState /><ObjCounter /></>} />
       <LocalNameForm />
+      <Twrap
+        title="useForm-duped"
+      >
+        <NameForm />
+      </Twrap>
+
       <Twrap
         title="useForm--working"
       >

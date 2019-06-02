@@ -6,14 +6,17 @@ import linkRes from '../../../data/links-res.json';
 
 const HeaderPortal = () => {
 
-  let links = [];
-  Object.values(linkRes.resLinks[0].reactLinks).map((item, i) => {
-    return links.push(item)
+  let links = Object.values(linkRes).map((links, i) => {
+    console.log('headerlinks',
+      links)
+    return links
   })
+
+  { console.log('portal', { links }) }
+
 
   return (
     <HeaderPortalWrapper>
-
       <ul style={{
         display: 'flex',
         justifyContent: 'space-evenly',
@@ -23,7 +26,7 @@ const HeaderPortal = () => {
         flexBasis: '0 1 40%'
       }}>
 
-        <LinksComponent links={links} />
+        <LinksComponent links={links[0]} />
 
       </ul>
 

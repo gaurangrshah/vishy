@@ -38,36 +38,36 @@
       "error": false
     }
   ],
-  "resLinks": [
+  "reactLinks": [
     {
       "id": 1,
-      "reactLinks": [
-        {
-          "linkId": 1,
-          "linkName": "Learn React",
-          "href": "https://reactjs.org"
-        },
-        {
-          "linkId": 2,
-          "linkName": "React Cheat Sheet",
-          "href": "https://devhints.io/react"
-        },
-        {
-          "linkId": 3,
-          "linkName": "React Cheat Sheet Tool",
-          "href": "https://reactcheatsheet.com"
-        },
-        {
-          "linkId": 4,
-          "linkName": "React Patterns",
-          "href": "https://reactpatterns.com"
-        },
-        {
-          "linkId": 5,
-          "linkName": "Awesome React",
-          "href": "https://github.com/enaqx/awesome-react"
-        }
-      ]
+      "linkName": "Learn React",
+      "href": "https://reactjs.org"
+    },
+    {
+      "id": 2,
+      "linkName": "React Cheat Sheet",
+      "href": "https://devhints.io/react"
+    },
+    {
+      "id": 3,
+      "linkName": "React Cheat Sheet Tool",
+      "href": "https://reactcheatsheet.com"
+    },
+    {
+      "id": 4,
+      "linkName": "React Patterns",
+      "href": "https://reactpatterns.com"
+    },
+    {
+      "id": 5,
+      "linkName": "Awesome React",
+      "href": "https://github.com/enaqx/awesome-react"
+    },
+    {
+      "id": 6,
+      "linkName": "Medium: JSON-Server Methods",
+      "href": "https://medium.com/codingthesmartway-com-blog/create-a-rest-api-with-json-server-36da8680136d"
     }
   ]
 }

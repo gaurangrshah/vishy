@@ -33,7 +33,6 @@ class Poster extends Component {
     // 1st: API Endpoint URL
     // 2nd: the data we want to send (this.state)
     axios.post('https://jsonplaceholder.typicode.com/posts', this.state)
-      // axios.post('http://localhost:3000/nameform', this.state)
 
       .then(response => {
         this.setState({ success: true })

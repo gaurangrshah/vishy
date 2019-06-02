@@ -31,7 +31,7 @@ class Getter extends Component {
       // invoking the get method from axios, which takes one arg: the API endpoint for the request
       .then(response => { // if the response is successful, then gets called, and handles the response
         // console.log(response) // logging the repsonse to the console.
-        this.setState({ posts: response.data }) // setting state with data from request response.
+        this.setState({ posts: response.data.slice(0, 10) }) // setting state with data from request response. using slice to limit to the first 10 results.
       })
       .catch(error => { // if there is an error, handle error
         console.warn(error) // logging error to the console.
@@ -42,7 +42,7 @@ class Getter extends Component {
 
 
   render() {
-    const { posts, errorMsg } = this.state;
+    const { posts, showPosts, errorMsg } = this.state;
     // destructure the posts & errorMsg array from state.
 
     return (
@@ -51,12 +51,11 @@ class Getter extends Component {
         source="http://www.youtube.com/watch?v=NEYrSUM4Umw"
       >
 
-        <button onClick={this.renderPosts}>List {this.state.posts.length} Posts</button>
+        <button onClick={this.renderPosts}>List {posts.length} Posts</button>
         {/* {renderPosts ?  : null} */}
-        {this.state.showPosts ? <PostList posts={posts} /> : null}
+        {showPosts ? <PostList renderArr={posts} errorMsg={errorMsg} /> : null}
         {/* // if there is an error we can display the message here otherwise return null */}
         {errorMsg ? <div>{errorMsg}</div> : null}
-
       </Twrap>
     )
   }

@@ -1,13 +1,11 @@
 import React from 'react';
 import StrapModal from './StrapModal';
-import { NameForm } from '../../PlugForm/useForm';
 
-
-export const StdModal = () => {
+export const StdModal = (props) => {
   return (
-    <StrapModal buttonLabel="Open Me" modalTitle="Test Form Add Inputs" isOpen={true}>
+    <StrapModal toggleButtonLabel={props.toggleButtonLabel} modalTitle={props.modalTitle} isOpen={props.isOpen} hideButton={props.hideButton} buttonType={props.buttonType} handeSubmit={props.handleSubmit}>
 
-      <NameForm />
+      {props.children}
 
     </StrapModal>
   )
