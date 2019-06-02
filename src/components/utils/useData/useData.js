@@ -8,7 +8,10 @@ export const useData = (endpoint, callback, initialValue) => {
   // we've defaulted, links {} to an empty object here, but inital value can be passed in.
   const updateData = (newData) => setData(newData);
 
+
+
   // const [resp, updateResp] = useResp();
+  // console.log(resp)
   useEffect(() => {
     console.log('data mounted')
     const fetchData = async () => {
