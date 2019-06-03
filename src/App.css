@@ -56,6 +56,17 @@ mark.note {
   padding: 2em;
 }
 
-#console-toast {
-  cursor: move;
+.toast[role="alert"] {
+  position: fixed;
+  bottom: 8em;
+  right: 1em;
+  background-color: #444;
+  max-height: 40vh;
+  overflow: scroll;
+  width: 350px;
+}
+
+div[data-method="log"] {
+  margin-top: 0.5em;
+  background: rgb(134, 134, 134);
 }
