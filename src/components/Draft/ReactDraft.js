@@ -12,7 +12,7 @@ export class ControlledEditor extends Component {
     };
   }
 
-  onEditorStateChange: Function = (editorState) => {
+  onEditorStateChange = (editorState) => {
     this.setState({
       editorState,
     });
