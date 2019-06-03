@@ -15,13 +15,15 @@ export const Setter = (endpoint, callback, payload) => {
         .then(response => response)
         .then(console.log('success'))
         .catch(err => console.log(err))
+
       console.log(response);
+
       payload = response;
 
       return payload
     }
-    postData().then(() => callback(payload))
 
+    return postData().then(() => callback(payload)).then(() => console.log('success2'))
   }
 }
 

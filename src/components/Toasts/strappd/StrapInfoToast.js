@@ -6,7 +6,7 @@ export const StrapInfoToast = (props) => {
   return (
     (props.isOpen) ? (
       <ToastPortalWrapper>
-        <Toast>
+        <Toast draggable="true">
           <ToastHeader icon="info">
             {props.toastHeader}
           </ToastHeader>

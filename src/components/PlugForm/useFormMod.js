@@ -15,18 +15,24 @@ export const LinkForm = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
     // const endpoint = 'http://localhost:3000/reactLinks'
     const endpoint = 'https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/'
+    // endpoints can be built up, then passed in to Setter() as the first arg.
+
     const payload = { id: nextId, linkName, href }
+    //prepare the payload to match api
     alert(`Submitting Name ${JSON.stringify(payload)}`);
+    //alert successful payload.
 
     const payloadCallback = (res) => {
-      //callback that gets called after success.
+      //callback that gets fires after Setter() returns success.then => callback(payload)
       console.log('then', { res })
 
     }
 
     Setter(endpoint, payloadCallback, payload)
+    // calling setter which returns a callback with the payload, that we then log out above via payloadCallback();
 
   }
 
@@ -36,8 +42,10 @@ export const LinkForm = (props) => {
       handleSubmit(e)
     }}>
       <label>
-        id: {props.nextId || ''}
+        {/* current nextId gets passed in via props, from <linkscomponent/> */}
+        id: {props.nextId || Math.floor(Math.random(10, 20) * 10) + 1 || ''}
         {/* using math.random to generate a random num btw. 1 - 10, as a fallback */}
+
         <input type="text" defaultValue={props.nextId} hidden />
       </label>
 

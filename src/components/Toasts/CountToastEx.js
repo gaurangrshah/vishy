@@ -41,7 +41,9 @@ class ClassCounter extends Component {
     return (
       <div>
         <button onClick={this.incrementCount}>{this.state.count}</button>
-        <StrapInfoToast toastHeader="count value" isOpen={this.state.isOpen} toastBody={this.state.count} />
+        <StrapInfoToast toastHeader="count value" isOpen={this.state.isOpen} toastBody={this.state.count} >
+          {this.props.children}
+        </StrapInfoToast>
       </div>
     )
   }

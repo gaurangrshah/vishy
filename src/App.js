@@ -40,7 +40,7 @@ import ArrCounter from './components/tutorials/HooksSeries/ArrCounter'
 import ClassCounterFinal from './components/tutorials/HooksSeries/ClassCounterFinal'
 import HookCounterFinal from './components/tutorials/HooksSeries/HookCounterFinal'
 import LoginWidget from './components/tutorials/Login/LoginWidget';
-
+import ConsoleLogger from './components/utils/ConsoleLogs/ConsoleLogger';
 
 function App() {
   return (
@@ -48,7 +48,7 @@ function App() {
 
       <HeaderPortal />
       <header className="App-header">
-        <StdModal buttonLabel="" modalTitle="" />
+        <ConsoleLogger />
       </header>
       <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
       <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />

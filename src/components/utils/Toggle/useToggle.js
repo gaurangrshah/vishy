@@ -1,7 +1,7 @@
 import { useState } from 'react';
 
-export const useToggle = () => {
-  const [toggle, setToggle] = useState(false)
+export const useToggle = (defaultBool) => {
+  const [toggle, setToggle] = useState(defaultBool || false)
   const handleToggle = (e) => {
     setToggle(!toggle);
   };
