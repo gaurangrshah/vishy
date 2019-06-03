@@ -41,14 +41,17 @@ import ClassCounterFinal from './components/tutorials/HooksSeries/ClassCounterFi
 import HookCounterFinal from './components/tutorials/HooksSeries/HookCounterFinal'
 import LoginWidget from './components/tutorials/Login/LoginWidget';
 import ConsoleLogger from './components/utils/ConsoleLogs/ConsoleLogger';
+import { ControlledEditor } from './components/Draft/ReactDraft';
 
 function App() {
   return (
     <div className="App">
 
+      <ConsoleLogger />
       <HeaderPortal />
       <header className="App-header">
-        <ConsoleLogger />
+        <StdModal buttonLabel="controlled-editor" modalTitle="controlled-editor" children={<ControlledEditor />} />
+
       </header>
       <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
       <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />

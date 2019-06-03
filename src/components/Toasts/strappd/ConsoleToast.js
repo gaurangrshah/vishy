@@ -14,7 +14,7 @@ export default (props) => {
           <ToastHeader icon="info" onClick={(e) => handleToggle(e)}>
             {props.toastHeader}
           </ToastHeader>
-          <ToastBody style={{ backgroundColor: '#444' }}>
+          <ToastBody>
             {toggle && props.toastBody}
           </ToastBody>
         </Toast>
