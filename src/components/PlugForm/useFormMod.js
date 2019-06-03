@@ -1,50 +1,32 @@
 import React from "react";
 import { Button } from 'reactstrap';
 import { useInput } from '../utils/useInput/useInput';
-import axios from 'axios'
-// 🚧 check this and integrate setter
-// import { useSetter } from '../utils/setter/setter';
+
+// Basic HTTP Setter, no data store.
+import { Setter } from '../utils/setter/setter';
+
 
 export const LinkForm = (props) => {
   const { nextId } = props
   const { value: linkName, bind: bindlinkName, reset: resetlinkName } = useInput('');
   const { value: href, bind: bindHref, reset: resetHref } = useInput('');
 
+
+
   const handleSubmit = (e) => {
     e.preventDefault();
+    // const endpoint = 'http://localhost:3000/reactLinks'
+    const endpoint = 'https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/'
     const payload = { id: nextId, linkName, href }
-    // const loaded = {
-
-    //   id: 1, reactLinks: [{ ...payload }]
-
-    // }
-    // updateLinks(payload)
     alert(`Submitting Name ${JSON.stringify(payload)}`);
 
+    const payloadCallback = (res) => {
+      //callback that gets called after success.
+      console.log('then', { res })
 
-    let mount = true;
-
-    if (mount) {
-      const postData = async () => {
-        console.log('settingResponseawait')
-
-        // const endpoint = 'http://localhost:3000/reactLinks'
-        const endpoint = 'https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/'
-        const response = await axios.post(endpoint, payload)
-          .then(response => response)
-          .then(console.log('success'))
-          .catch(err => console.log(err))
-        console.log(response);
-        resetlinkName();
-        resetHref();
-        return response
-      }
-      postData();
-    }
-    return () => {
-      mount = false;
     }
 
+    Setter(endpoint, payloadCallback, payload)
 
   }
 

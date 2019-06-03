@@ -48,16 +48,16 @@ function App() {
 
       <HeaderPortal />
       <header className="App-header">
-
-        <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
-        <StdModal buttonLabel="Context-Login" modalTitle="Context Login Widget" children={<LoginWidget />} />
-
+        <StdModal buttonLabel="" modalTitle="" />
       </header>
+      <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
+      <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />
       <StdModal buttonLabel="ArrCounterEx" modalTitle="ArrCounterEx" children={<ArrCounter />} />
       <StdModal buttonLabel="HookCounterFinal" modalTitle="HookCounterFinal" children={<HookCounterFinal />} />
       <StdModal buttonLabel="ClassCounterFinal" modalTitle="ClassCounterFinal" children={<ClassCounterFinal />} />
       <StdModal buttonLabel="ObjCounterEx" modalTitle="ObjCounterEx" children={<ObjCounter />} />
       <StdModal buttonLabel="Counter Examples" modalTitle="ClassCounter & Functional Counter" children={<><ClassCounter /> <FuncCounter /><FuncCounterWPrevState /><ObjCounter /></>} />
+
       <LocalNameForm />
       <Twrap
         title="useForm-duped"
@@ -79,7 +79,6 @@ function App() {
       <ClickCounter name="this guy" />
       <ErrorHandling />
       <MDViewer />
-
 
       <Twrap
         title="all previous"
