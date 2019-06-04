@@ -1,27 +1,30 @@
 import React, { Component } from 'react';
 import { FullStrapModal } from '../Portals/Modal/FullModal';
+import { displayMessage } from '../utils/form-utils/form-utils';
 
-export const RenderForm = ({userName, password, isLoggedIn, handleSubmit, handleChange, error, success}) => (
-  <form onSubmit={handleSubmit}>
-    Hi
-    <input name="userName" type="text" value={userName} onChange={handleChange} is-valid/>
-    <input name="password" type="text" value={password} onChange={handleChange} required/>
-    <input type="submit" value="submit" />
-  </form>
-)
 
-export const RenderWelcome = ({userName, loggedIn, success, error, handleLogout}) => (
 
-  <div>
-    <h1>Hey {userName}</h1>
-    <p>{loggedIn && success ? <p> {success}</p> : () => {
-      console.log('error displaying success msg');
-    }}</p>
-    <p>{loggedIn && error ? <p>{error}</p> : () => { console.log('error displaying error message 🙃')}
-  }</p>
-    <button onClick={handleLogout()}>Logout</button>
-  </div>
-)
+export const RenderForm = ({ userName, password, handleSubmit, handleChange, error, success }) => {
+  return (
+    <>
+      <input name="userName" type="text" value={userName} onChange={handleChange} />
+      <input name="password" type="text" value={password} onChange={handleChange} required />
+      {displayMessage(success, error)}
+    </>
+  )
+}
+
+export const RenderWelcome = ({ userName, success, error, handleLogout }) => {
+  return (
+    <div>
+      <h1>Hey {userName}</h1>
+      {displayMessage(success, error)}
+      {/* <button onClick={handleLogout}>Logout</button> */}
+    </div>
+  )
+}
+
+
 
 
 class ClassLoginForm extends Component {
@@ -32,7 +35,7 @@ class ClassLoginForm extends Component {
     this.state = {
       userName: '',
       password: '',
-      isLoggedIn: props.isLoggedIn || false,
+      isLoggedIn: false,
       error: '',
       success: '',
     }
@@ -42,40 +45,71 @@ class ClassLoginForm extends Component {
   handleLogout = (e) => {
     e.preventDefault();
     e.persist();
-    this.setState({isLoggedIn: !this.state.isLoggedIn, password: ''})
+    this.setState({ isLoggedIn: !this.state.isLoggedIn, userName: '', password: '', success: '', error: '' })
+    console.log('logged out');
   }
 
-  handleSubmit = (e) => {
-    e.preventDefault();
-    e.persist();
-    // console.log(e.target.input.name)
+  handleSubmit = () => {
     // just loggin state on submit --
-    this.setState({
-      isLoggedIn: !this.state.isLoggedIn,
-      // toggle login on submit
-      success: `Welcome ${this.state.userName}`
-    })
+    console.log('islogged?', this.state.isLoggedIn)
+    if ((this.state.userName).length >= 5) {
+      this.setState({
+        // state is already being set onChange, this is redundant, remove this when handling via dispatch, context, or server-side.
+        isLoggedIn: !this.state.isLoggedIn,
+        // toggle login on submit
+        success: `Welcome ${this.state.userName}`
+      })
+      console.log(`success: ${this.state.isLoggedIn}`)
+    } else {
+      this.setState({
+        error: "Please Enter a Valid User Name"
+      })
+    }
+
+
+
+
+
+
   }
 
   handleChange = (e) => {
     const { name, value } = e.target
-    console.log('val change:', { name, value })
-    this.setState({[name]: value})
+    // console.log('val change:', { name, value })
+    this.setState({ [name]: value })
   }
 
 
   render() {
-    const   renderLogic = () => {
+    const renderLogic = () => {
       const { userName, password, isLoggedIn, error, success } = this.state
-        return (this.state.userName && this.state.isLoggedIn) ? (
-          <RenderWelcome handleLogout={() => this.handleLogout.bind(this)}/>
-        ) : (
-          <RenderForm username={userName} password={password} loggedIn={isLoggedIn} success={success} error={error} handleSubmit={this.handleSubmit.bind(this)} handleChange={this.handleChange.bind(this)} />
+      return (this.state.userName && this.state.isLoggedIn) ? (
+        // 🚧 need to handle this logic where, username is validated before accpeted as valid.
+        <RenderWelcome
+          userName={userName}
+          error={error} success={success}
+        />
+      ) : (
+          <RenderForm
+            username={userName} password={password}
+            success={success} error={error}
+            loggedIn={isLoggedIn}
+            handleChange={this.handleChange}
+          />
         )
     }
     return (
-      <FullStrapModal modalTitle="FullScreen Yet?">
+      <FullStrapModal
+        modalTitle="FullScreen Yet?"
+        handleSubmit={(e) => this.handleSubmit(e)}
+        // passing down the handleSubmit (doesnt seem to capture the event on either end) kept (e) for future testing purposes  --- same for handleLogout below
+        isLoggedIn={this.state.isLoggedIn}
+        handleLogout={(e) => this.handleLogout(e)}
+      >
+
         {renderLogic()}
+        {/* calling renderlogic to rendered appropriate fields for logged in vs logged out users */}
+
       </FullStrapModal >
     )
   }

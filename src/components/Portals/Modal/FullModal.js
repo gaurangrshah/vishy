@@ -1,12 +1,29 @@
 import React from 'react';
-import StrapModalMod from './StrapModalMod';
+import LoginModalStrap from './LoginModalStrap';
 
 export const FullStrapModal = (props) => {
   return (
-    <StrapModalMod toggleButtonLabel={props.buttonLabel} modalTitle={props.modalTitle} isOpen={props.isOpen} hideButton={props.hideButton} buttonType={props.buttonType} handeSubmit={props.handleSubmit} className={"modal-full" || props.className}>
-
+    <LoginModalStrap
+      modalButtonTitle="Send Now"
+      toggleButtonLabel={"Login" || props.buttonLabel}
+      modalTitle={props.modalTitle}
+      isOpen={props.isOpen}
+      hideButton={props.hideButton}
+      className={"modal-full" || props.className}
+      loginButtonTitle="Login"
+      handleSubmit={props.handleSubmit}
+      logoutButtonTitle={props.logoutButtonTitle || "Logout"}
+      handleLogout={props.handleLogout}
+      isLoggedIn={props.isLoggedIn}
+    >
       {props.children}
-
-    </StrapModalMod>
+    </LoginModalStrap>
   )
 }
+
+
+/*
+
+FullStrapMod, just builds out and passes down our forms props to StrapModalMod, which is handling the rendering logic for logged in and logged out users.
+
+*/
