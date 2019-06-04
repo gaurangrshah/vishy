@@ -15,6 +15,6 @@ export default ({ renderArr, children, errorMsg }) => {
       })}
     </ul>
   ) : (
-      <p>{errorMsg || "error displaying your data."}</p>
+      <p>{errorMsg || "error displaying your data."} {console.log('errorRenderingArr', {errorMsg})}</p>
     )
 }

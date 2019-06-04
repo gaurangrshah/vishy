@@ -3,10 +3,7 @@ import { LinkForm } from '../../../PlugForm/useFormMod';
 import { StdModal } from '../../Modal/StdModal';
 
 
-export const mapLinks = (arr) => (
-  // console.log(Array.isArray(arr))
-  // console.log(typeof arr)
-  // console.log('links:', arr)
+export const mapArr = (arr) => (
 
   (Array.isArray(arr)) ? (
     arr.map((item, index) => {
@@ -26,7 +23,12 @@ export const mapLinks = (arr) => (
         </li>
       )
     })
-  ) : () => console.log('not an array')
+  ) : () => {
+    console.log('not an array')
+    console.log('isArray?:', Array.isArray(arr))
+    console.log('typeof?:', typeof arr)
+    console.log('{links:}', arr)
+  }
 )
 
 
@@ -39,12 +41,15 @@ const LinksComponent = (props) => {
       {
         // if links exists...
         (links) ? (
-          mapLinks(links)
+          mapArr(links)
           // then call maplinks passing in the array of links from props.links
           // maplinks returns an array of mapped li's with <a></a> in them.
         ) : (
-            <mark>Sorry No Links Available. Check local server.</mark>
-            // message if no links get pulled in.
+            <mark>
+              Sorry No Links Available. Check local server.
+              {/* // message if no links get pulled in. */}
+              {console.log('{links}:', { links })}
+            </mark>
           )
       }
       <StdModal

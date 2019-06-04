@@ -7,7 +7,7 @@ const HeaderPortalWrapper = ({ children }) => {
     <div style={{
       background: 'gray',
       position: 'fixed',
-      zIndex: '2',
+      zIndex: '1',
       bottom: '0'
     }}>
       {children}

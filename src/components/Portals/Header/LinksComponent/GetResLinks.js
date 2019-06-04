@@ -9,8 +9,8 @@ import { useData } from '../../../utils/useData/useData'
 
 const GetResLinks = () => {
 
-  // const endpoint = 'http://localhost:3000/reactLinks'
-  const endpoint = "https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/";
+  const endpoint = 'http://localhost:3000/reactLinks'
+  // const endpoint = "https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/";
   const { data, updateData } = useData(endpoint, null)
   // useData takes a callback, currently not using it, but just rendering it back.
 

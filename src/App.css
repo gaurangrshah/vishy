@@ -58,7 +58,7 @@ mark.note {
 
 .toast[role="alert"] {
   position: fixed;
-  bottom: 8em;
+  bottom: 28em;
   right: 1em;
   background-color: #444;
   max-height: 40vh;
@@ -69,4 +69,20 @@ mark.note {
 div[data-method="log"] {
   margin-top: 0.5em;
   background: rgb(134, 134, 134);
+}
+
+.modal-full {
+  position: fixed;
+  min-width: 100%!important;
+  min-height: 100%!important;
+  margin: 0;
+  padding: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.modal-full .modal-body {
+  min-height: 80vh;
 }

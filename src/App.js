@@ -42,69 +42,77 @@ import HookCounterFinal from './components/tutorials/HooksSeries/HookCounterFina
 import LoginWidget from './components/tutorials/Login/LoginWidget';
 import ConsoleLogger from './components/utils/ConsoleLogs/ConsoleLogger';
 import { ControlledEditor } from './components/Draft/ReactDraft';
+import Board from './components/tutorials/Comments/Board'
+import Store from './data/store/Store';
+import ClassLoginForm from './components/Auth/ClassLoginForm';
 
 function App() {
   return (
-    <div className="App">
+    <Store>
+      <div className="App">
 
-      <ConsoleLogger />
-      <HeaderPortal />
-      <header className="App-header">
-        <StdModal buttonLabel="controlled-editor" modalTitle="controlled-editor" children={<ControlledEditor />} />
+        <ConsoleLogger />
+        <HeaderPortal />
+        <header className="App-header">
+          <StdModal buttonLabel="controlled-editor" modalTitle="controlled-editor" children={<ControlledEditor />} />
+          <ClassLoginForm />
+          <StdModal buttonLabel="comments" modalTitle="comments" children={<Board />} />
+        </header>
+        <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
+        <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />
+        <StdModal buttonLabel="ArrCounterEx" modalTitle="ArrCounterEx" children={<ArrCounter />} />
+        <StdModal buttonLabel="HookCounterFinal" modalTitle="HookCounterFinal" children={<HookCounterFinal />} />
+        <StdModal buttonLabel="ClassCounterFinal" modalTitle="ClassCounterFinal" children={<ClassCounterFinal />} />
+        <StdModal buttonLabel="ObjCounterEx" modalTitle="ObjCounterEx" children={<ObjCounter />} />
+        <StdModal buttonLabel="Counter Examples" modalTitle="ClassCounter & Functional Counter" children={<><ClassCounter /> <FuncCounter /><FuncCounterWPrevState /><ObjCounter /></>} />
 
-      </header>
-      <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
-      <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />
-      <StdModal buttonLabel="ArrCounterEx" modalTitle="ArrCounterEx" children={<ArrCounter />} />
-      <StdModal buttonLabel="HookCounterFinal" modalTitle="HookCounterFinal" children={<HookCounterFinal />} />
-      <StdModal buttonLabel="ClassCounterFinal" modalTitle="ClassCounterFinal" children={<ClassCounterFinal />} />
-      <StdModal buttonLabel="ObjCounterEx" modalTitle="ObjCounterEx" children={<ObjCounter />} />
-      <StdModal buttonLabel="Counter Examples" modalTitle="ClassCounter & Functional Counter" children={<><ClassCounter /> <FuncCounter /><FuncCounterWPrevState /><ObjCounter /></>} />
 
-      <LocalNameForm />
-      <Twrap
-        title="useForm-duped"
-      >
-        <NameForm />
-      </Twrap>
 
-      <Twrap
-        title="useForm--working"
-      >
-        <NameForm />
-        {/* using nameForm in stdModal, removed wrapping from within */}
-      </Twrap>
-      <Poster />
-      <Getter />
-      <UserApp />
-      <RenderPropsRender />
-      <Portals />
-      <ClickCounter name="this guy" />
-      <ErrorHandling />
-      <MDViewer />
+        <LocalNameForm />
+        <Twrap
+          title="useForm-duped"
+        >
+          <NameForm />
+        </Twrap>
 
-      <Twrap
-        title="all previous"
-      >
-        <KeyedRefs />
-        <FRParent />
-        <FocusInput />
-        <RefsDemo />
-        <ParentComp />
-        <Lifecycles />
-        <FormControl2 />
-        <FormControl />
-        <Styling primary={true} />
-        <ListRendering />
-        <ConditionalRendering />
-        <LocalStorageState />
-        <ParentComponent />
-        <EventBind />
-        <ClickEvents />
-        <Counter />
-      </Twrap>
+        <Twrap
+          title="useForm--working"
+        >
+          <NameForm />
+          {/* using nameForm in stdModal, removed wrapping from within */}
+        </Twrap>
+        <Poster />
+        <Getter />
+        <UserApp />
+        <RenderPropsRender />
+        <Portals />
+        <ClickCounter name="this guy" />
+        <ErrorHandling />
+        <MDViewer />
 
-    </div >
+        <Twrap
+          title="all previous"
+        >
+          <KeyedRefs />
+          <FRParent />
+          <FocusInput />
+          <RefsDemo />
+          <ParentComp />
+          <Lifecycles />
+          <FormControl2 />
+          <FormControl />
+          <Styling primary={true} />
+          <ListRendering />
+          <ConditionalRendering />
+          <LocalStorageState />
+          <ParentComponent />
+          <EventBind />
+          <ClickEvents />
+          <Counter />
+        </Twrap>
+
+      </div>
+    </Store>
   );
 }
 
