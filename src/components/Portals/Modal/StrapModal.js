@@ -24,15 +24,28 @@ class StrapModal extends Component {
     // standard reactStrap components, now with props for each atrribute.
     return (
       <>
-        <Button color={this.props.buttonColor || "danger"} onClick={this.toggle}>{this.props.toggleButtonLabel || "Open Me"}</Button>
-        <Modal isOpen={this.props.isOpen || this.state.modal} toggle={this.toggle} className={this.props.className}>
-          <ModalHeader toggle={this.toggle}>{this.props.modalTitle}</ModalHeader>
+        <Button
+          color={this.props.buttonColor || "danger"}
+          onClick={this.toggle}
+        >
+          {this.props.toggleButtonLabel || "Open Me"}
+        </Button>
+        <Modal
+          isOpen={this.props.isOpen || this.state.modal}
+          toggle={this.toggle}
+          className={this.props.className}>
+          <ModalHeader
+            toggle={this.toggle}
+          >
+            {this.props.modalTitle}
+          </ModalHeader>
           <ModalBody>
             {this.props.children}
           </ModalBody>
           <ModalFooter>
             {
-              (!this.props.hideButton) && <Button
+              (!this.props.hideButton) &&
+              <Button
                 type={"submit" || null} // working, but not applying to form.
                 color="primary"
                 onClick={this.props.handleSubmit || this.toggle}

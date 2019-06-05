@@ -12,6 +12,7 @@ export const LinkForm = (props) => {
   const { value: href, bind: bindHref, reset: resetHref } = useInput('');
 
 
+  console.log('shh', { resetlinkName, resetHref });
 
   const handleSubmit = (e) => {
     e.preventDefault();

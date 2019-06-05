@@ -19,7 +19,8 @@ const HeaderPortal = () => {
   // 🚦
   const { data, updateData } = useData(endpoint, null)
 
-  //🚦  { console.log('portal', { data }) }
+
+  console.log('🚦 portal', { data, updateData })
   // { console.log('portal', { links }) }
 
 

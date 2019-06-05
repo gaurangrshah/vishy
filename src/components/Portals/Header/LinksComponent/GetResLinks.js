@@ -16,7 +16,7 @@ const GetResLinks = () => {
 
   // console.log('adddata: ', { data, updateData, callback })
 
-  console.log('📜', { data })
+  console.log('📜', { data, updateData })
 
   return (
 

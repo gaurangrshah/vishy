@@ -13,7 +13,8 @@ export const useInput = (initialValue, callback) => {
     reset: () => setValue(""),
     submit: (newValue) => {
       setValue(newValue)
-      console.log('📤 udpate:useInput', value)
+      console.log('🔺 udpate:useInput', value)
+      return (callback) ? callback() : null
     },
     bind: {
       value,
@@ -33,3 +34,8 @@ export const useInput = (initialValue, callback) => {
   // }
 
 }
+
+
+/*
+  used by useForm, holder.js
+*/

@@ -4,7 +4,7 @@ import { displayMessage } from '../utils/form-utils/form-utils';
 
 
 
-export const RenderForm = ({ userName, password, handleSubmit, handleChange, error, success }) => {
+export const RenderForm = ({ userName, password, success, error, handleChange }) => {
   return (
     <>
       <input name="userName" type="text" value={userName} onChange={handleChange} />
@@ -14,7 +14,7 @@ export const RenderForm = ({ userName, password, handleSubmit, handleChange, err
   )
 }
 
-export const RenderWelcome = ({ userName, success, error, handleLogout }) => {
+export const RenderWelcome = ({ userName, success, error }) => {
   return (
     <div>
       <h1>Hey {userName}</h1>
@@ -66,12 +66,9 @@ class ClassLoginForm extends Component {
       })
     }
 
-
-
-
-
-
   }
+
+
 
   handleChange = (e) => {
     const { name, value } = e.target
@@ -80,10 +77,22 @@ class ClassLoginForm extends Component {
   }
 
 
+  loginProps = {
+    color: "primary",
+    onClick: this.handleSubmit
+  }
+
+  logoutProps = {
+    color: "danger",
+    onClick: this.handleLogout
+  }
+
+
   render() {
+
     const renderLogic = () => {
       const { userName, password, isLoggedIn, error, success } = this.state
-      return (this.state.userName && this.state.isLoggedIn) ? (
+      return (userName && isLoggedIn) ? (
         // 🚧 need to handle this logic where, username is validated before accpeted as valid.
         <RenderWelcome
           userName={userName}
@@ -93,18 +102,19 @@ class ClassLoginForm extends Component {
           <RenderForm
             username={userName} password={password}
             success={success} error={error}
-            loggedIn={isLoggedIn}
             handleChange={this.handleChange}
           />
         )
     }
+
     return (
       <FullStrapModal
         modalTitle="FullScreen Yet?"
-        handleSubmit={(e) => this.handleSubmit(e)}
-        // passing down the handleSubmit (doesnt seem to capture the event on either end) kept (e) for future testing purposes  --- same for handleLogout below
+
         isLoggedIn={this.state.isLoggedIn}
-        handleLogout={(e) => this.handleLogout(e)}
+
+        loginProps={this.loginProps}
+        logoutProps={this.logoutProps}
       >
 
         {renderLogic()}

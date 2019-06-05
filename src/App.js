@@ -45,18 +45,19 @@ import { ControlledEditor } from './components/Draft/ReactDraft';
 import Board from './components/tutorials/Comments/Board'
 import Store from './data/store/Store';
 import ClassLoginForm from './components/Auth/ClassLoginForm';
+import { DashPage } from './Dashboard/DashPage'
+
+
 
 function App() {
   return (
     <Store>
       <div className="App">
 
-        <ConsoleLogger />
+        {/* <ConsoleLogger /> */}
         <HeaderPortal />
         <header className="App-header">
-          <StdModal buttonLabel="controlled-editor" modalTitle="controlled-editor" children={<ControlledEditor />} />
-          <ClassLoginForm />
-          <StdModal buttonLabel="comments" modalTitle="comments" children={<Board />} />
+          <DashPage />
         </header>
         <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
         <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />
@@ -65,7 +66,9 @@ function App() {
         <StdModal buttonLabel="ClassCounterFinal" modalTitle="ClassCounterFinal" children={<ClassCounterFinal />} />
         <StdModal buttonLabel="ObjCounterEx" modalTitle="ObjCounterEx" children={<ObjCounter />} />
         <StdModal buttonLabel="Counter Examples" modalTitle="ClassCounter & Functional Counter" children={<><ClassCounter /> <FuncCounter /><FuncCounterWPrevState /><ObjCounter /></>} />
-
+        <StdModal buttonLabel="controlled-editor" modalTitle="controlled-editor" children={<ControlledEditor />} />
+        <ClassLoginForm />
+        <StdModal buttonLabel="comments" modalTitle="comments" children={<Board />} />
 
 
         <LocalNameForm />

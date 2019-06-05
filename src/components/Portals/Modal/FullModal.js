@@ -4,17 +4,17 @@ import LoginModalStrap from './LoginModalStrap';
 export const FullStrapModal = (props) => {
   return (
     <LoginModalStrap
+      isOpen={props.isOpen || false}
+      modalTitle={props.modalTitle}
       modalButtonTitle="Send Now"
       toggleButtonLabel={"Login" || props.buttonLabel}
-      modalTitle={props.modalTitle}
-      isOpen={props.isOpen}
-      hideButton={props.hideButton}
-      className={"modal-full" || props.className}
-      loginButtonTitle="Login"
-      handleSubmit={props.handleSubmit}
-      logoutButtonTitle={props.logoutButtonTitle || "Logout"}
-      handleLogout={props.handleLogout}
+      className={props.className}
       isLoggedIn={props.isLoggedIn}
+      loginButtonTitle="Login"
+      logoutButtonTitle={props.logoutButtonTitle || "Logout"}
+      loginProps={props.loginProps}
+      logoutProps={props.logoutProps}
+      hideButton={props.hideButton}
     >
       {props.children}
     </LoginModalStrap>
