@@ -4,12 +4,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 // "https://reactstrap.github.io/components/modals/"
 
 
-
-
-
-
-
-
 class LoginModalStrap extends Component {
   constructor(props) {
     super(props);
