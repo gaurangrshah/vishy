@@ -8,9 +8,9 @@ const DashPortalWrapper = (props) => {
       className="modal-full"
       buttonColor="primary"
       toggleButtonLabel="Launch Dash"
-      isOpen={true || ''}
+      isOpen={''}
       modalTitle="Dashboard"
-      hideButton={true}
+      hideButton={'' || true}
     >
 
       {props.children}

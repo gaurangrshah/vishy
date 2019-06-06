@@ -3,20 +3,21 @@ import { Toast, ToastBody, ToastHeader } from 'reactstrap';
 import ToastPortalWrapper from '../../Portals/ToastPortalWrapper';
 
 export const StrapInfoToast = (props) => {
+
+
+  const { toastHeader = 'info', toastBody = '', isOpen } = props
+  console.log('🦅displayToast', { toastHeader, toastBody });
   return (
-    (props.isOpen) ? (
-      <ToastPortalWrapper>
-        <Toast draggable="true">
-          <ToastHeader icon="info">
-            {props.toastHeader}
-          </ToastHeader>
-          <ToastBody>
-            {props.toastBody}
-          </ToastBody>
-        </Toast>
-      </ToastPortalWrapper>
-    ) : (
-        null
-      )
-  );
-};
+    <ToastPortalWrapper>
+      <Toast draggable="true" isOpen={isOpen}>
+        <ToastHeader icon="info">
+          {toastHeader}
+        </ToastHeader>
+        <ToastBody>
+          {toastBody}
+        </ToastBody>
+      </Toast>
+    </ToastPortalWrapper>
+  )
+}
+

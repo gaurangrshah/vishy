@@ -2,9 +2,9 @@ import { useState } from 'react';
 
 export const useToggle = (defaultBool) => {
   const [toggle, setToggle] = useState(defaultBool || false)
-  const handleToggle = (val) => {
-    setToggle({ toggle: val });
-  };
+
+  const handleToggle = (val) => setToggle(val);
+
   return [toggle, handleToggle]
 }
 

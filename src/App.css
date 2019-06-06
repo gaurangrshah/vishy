@@ -56,7 +56,7 @@ mark.note {
   padding: 2em;
 }
 
-.toast[role="alert"] {
+#console-toast {
   position: fixed;
   bottom: 28em;
   right: 1em;
@@ -106,3 +106,19 @@ div[data-method="log"] {
   border: 1px solid blue;
   background: rgb(235, 235, 235);
 }
+
+.alerty {
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/*
+// Notify Overrides
+$notie-color-success: $brand-primary;
+$notie-color-error:   $brand-danger;
+$notie-font-size-tablet: 1rem;
+$notie-font-size-desktop: 1.25rem;
+$notie-font-size-widescreen: 1.5rem;0
+ */

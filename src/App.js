@@ -54,7 +54,7 @@ function App() {
     <Store>
       <div className="App">
 
-        {/* <ConsoleLogger /> */}
+        <ConsoleLogger />
         <HeaderPortal />
         <header className="App-header">
           <DashPage />

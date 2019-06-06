@@ -12,10 +12,10 @@ export const BoxSizer = ({ children }) => {
   )
 }
 
-export const Box = ({ text, styles, className }) => {
+export const Box = ({ text, styles, className, tabindex }) => {
   return (
     <Col className=" box">
-      <StringHolder text={text} styles={styles} className={className} />
+      <StringHolder text={text} styles={styles} className={className} tabindex={tabindex} />
     </Col>
   )
 }

@@ -5,12 +5,12 @@ import { useToggle } from '../../utils/Toggle/useToggle';
 
 export default (props) => {
 
-  const [toggle, handleToggle] = useToggle(true)
+  const [toggle, handleToggle] = useToggle(false)
 
   return (
     (toggle || props.isOpen) ? (
-      <ToastPortalWrapper id="console-toast">
-        <Toast>
+      <ToastPortalWrapper >
+        <Toast id="console-toast" draggable>
           <ToastHeader icon="info" onClick={(e) => handleToggle(e)}>
             {props.toastHeader}
           </ToastHeader>

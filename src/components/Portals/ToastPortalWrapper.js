@@ -6,7 +6,8 @@ const ToastPortalWrapper = (props) => {
     <div style={{
       position: 'absolute',
       top: '0',
-      right: '2em'
+      right: '2em',
+      zIndex: 10000
     }}>
       {props.children}
     </div >,

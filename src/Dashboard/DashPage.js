@@ -11,7 +11,7 @@ const InitialGlobalState = {
 }
 
 
-export const DashPage = () => {
+export const DashPage = (props) => {
 
   const [state, setState] = useState(InitialGlobalState);
 
@@ -25,7 +25,7 @@ export const DashPage = () => {
 
   return (
 
-    <DashPortalWrapper>
+    <DashPortalWrapper isOpen={props.isOpen}>
 
       <DoList />
 
