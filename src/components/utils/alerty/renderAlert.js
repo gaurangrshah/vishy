@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from 'react';
 import { useToggle } from '../../utils/Toggle/useToggle';
 import { StrapInfoToast } from '../../Toasts/strappd/StrapInfoToast';
 
-const RenderAlert = ({ text, type = 'info', duration = 1800 }) => {
+const RenderAlert = ({ message, type = 'info', duration = 1800 }) => {
 
   const timer = useRef(null); /* created a ref to use for the timer. */
   const [toggle, handleToggle] = useToggle(true)
@@ -32,7 +32,7 @@ const RenderAlert = ({ text, type = 'info', duration = 1800 }) => {
     <StrapInfoToast
       isOpen={toggle} /* toggle sets toggle value for alert */
       toastHeader={type}
-      toastBody={text}
+      toastBody={message}
     />
   )
 }

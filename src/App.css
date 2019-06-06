@@ -107,12 +107,13 @@ div[data-method="log"] {
   background: rgb(235, 235, 235);
 }
 
-.alerty {
+/* .alerty {
   position: absolute;
   top: 0;
   right: 0;
   z-index: 1000;
-}
+  min-width: 30em;
+} */
 
 /*
 // Notify Overrides
