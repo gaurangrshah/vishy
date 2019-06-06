@@ -106,3 +106,9 @@ div[data-method="log"] {
   border: 1px solid blue;
   background: rgb(235, 235, 235);
 }
+
+
+select  {
+  width: 100%;
+  max-width: 100%;
+}

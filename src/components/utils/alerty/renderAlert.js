@@ -4,16 +4,6 @@ import { StrapInfoToast } from '../../Toasts/strappd/StrapInfoToast';
 
 /* Can be used to render alerts and handle alerts from any component,  */
 
-/**
-*
-* @param {*} message: string
-* @param {*} inputValue: passes in the currentvalue of the input being saved.
-* @param {*} type: string: adds appropriate class to toastHeader
-* @param {*} isOpen: toggles the alert
-* @param {*} duration: defaults to 1800
-* @returns {*} a toast notification, when isOpen is toggled
-*/
-
 const RenderAlert = ({ message, inputValue, type, isOpen, duration = 1800 }) => {
 
   const timer = useRef(null); /* created a ref to use for the timer. */
@@ -56,3 +46,19 @@ const RenderAlert = ({ message, inputValue, type, isOpen, duration = 1800 }) => 
 
 
 export { RenderAlert }
+
+
+
+/**
+*
+* @param {*} message: [string]
+* @param {*} inputValue: [value] passes in the currentvalue of the input being saved.
+* @param {*} type: [string] adds appropriate class to toastHeader
+* @param {*} isOpen: [bool] toggles the alert
+* @param {*} duration: [num] defaults to 1800
+* @param {*} timer: created as a ref to use to clear the setTimeout after an alert fires.
+* @param {*} toggle: [bool] used as local state to handle when the alert fires.
+*
+*
+* @returns {*} a toast notification, when isOpen is toggled
+*/

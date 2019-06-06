@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useInput } from '../../utils/useInput/useInput'
-import { RenderAlert } from '../../utils/alerty/renderAlert';
+import { StringHandler } from '../../Portals/Header/LinksComponent/StringHandler'
 
 // holder will hold specific bits of content and act on it.
 // takes in children from props, text, will be the default value any styles as an object, additional ClassNames, as well as any attributes, currently we've got "tabindex" being applied, but not working??
@@ -91,7 +91,7 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
 
   return (
 
-    <PComponent
+    <StringHandler
       inputValue={bindput}
       editing={state.editing}
       handleEdit={handleEdit}
@@ -131,56 +131,3 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
 *
 * @returns {*}
 */
-
-
-
-export const PComponent = ({ inputValue, editing, handleEdit, editors, className, styles, attrs, message, type, bindBindput, handleSubmit, keyPress, toggle }, { ...children }) => (
-  <>
-    {(!editing) ? (
-      /* TODO: extract pTag, rename PComponent, extract input, then use SimpleRenderer, to conditionally render. */
-
-      <>
-        <p
-          onDoubleClick={(e) => handleEdit(e)}
-          className={className}
-          editors={editors}
-          style={{ ...styles }}
-          {...attrs}
-        /* spreads out atrrs, namely trying to spread tabindex currently.  */
-        >
-
-          {inputValue || children}
-        </p>
-
-        <RenderAlert
-          isOpen={toggle}
-          message={message}
-          type={type}
-          inputValue={inputValue}
-        />
-      </>
-
-    ) : (
-
-        <input
-          type="text"
-          {...bindBindput}
-          onBlur={(e) => handleSubmit(e)}
-          onKeyDown={(e) => keyPress(e)}
-        />
-
-      )}
-
-  </>
-)
-
-
-
-export const simpleRenderer = (condition, Comp1, Comp2) => {
-  console.log('simpleRender:', { condition, Comp1, Comp2 })
-  return (condition) ? (
-    <Comp2 />
-  ) : (
-      <Comp1 />
-    )
-}

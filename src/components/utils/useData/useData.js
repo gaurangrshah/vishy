@@ -12,11 +12,13 @@ export const useData = (endpoint, callback, initialValue) => {
 
 
   useEffect(() => {
-    // console.log('useData: 🏔 ')
+
+    console.log('useData: 🏔 ')
+
     if (endpoint) {
       const fetchData = async () => {
 
-        // console.log('fetching..🤞')
+        console.log('fetching..🤞')
 
         const response = await axios(endpoint)
           .then(response => {
@@ -29,18 +31,21 @@ export const useData = (endpoint, callback, initialValue) => {
             console.log('useDataFetcherror: 📛', { err })
           })
           .then(null)
+
         // if no error, then handles updateData
         updateData(response.data || null)
       }
       fetchData();
       // takes the response and sets the links value on the Data object.
-      // callback();
+      // callback(); -- removed, callback, but can be used here if passed in as an arg.
       return () => {
         console.log('unmounting')
         // 🚧 unmounting seems to happen automatically after request, might be able to safely remove this... commenting out, if nothing breaks, then remove.
       };
     }
-  }, [])
+  }, [endpoint])
+  // 🚧 testing behavior of passing endpoint as a dependency, comment logs after solved.
+  // -- seems to work just fine, remove, after 6/6/19
 
   // console.log('check data', { data })
   return { data, updateData, callback }

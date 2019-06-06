@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { RenderFetcher } from './RenderFetcher'
-// import { simpleRenderer } from '../../../layout/content/holder'
 
 
 // TODO: bring in context, to help setup array of endpoints.

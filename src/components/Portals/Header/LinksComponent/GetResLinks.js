@@ -10,12 +10,8 @@ const GetResLinks = ({ endpoint }) => {
 
 
   // const endpoint = "https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/";
-  const { data, updateData } = useData(endpoint, null)
+  const { data } = useData(endpoint, null)
   // useData takes a callback, currently not using it, but just rendering it back.
-
-
-
-  // console.log('adddata: ', { data, updateData, callback })
 
   // console.log('📜', { data, updateData })
 
@@ -46,7 +42,7 @@ export default GetResLinks;
 *[internalstate]
 *@constant {*}  data      [arr] placeholder for the response returned from calling useData(endpoint)
 *@callback {*}  useData   [func] abstracted function used to update the data from the request.
-*
+* * removed instantiating useData, as it was not being utilized.
 * used to fetch data from any endpoint passed in via props, then calls useData(endpoint)
 * which returns a response, when we then take and udateData(response.data)
 * which is then available via "data"

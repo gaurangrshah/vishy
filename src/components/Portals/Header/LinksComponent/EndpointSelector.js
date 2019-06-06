@@ -6,18 +6,22 @@ export const EndpointSelector = ({ endpoints, setEndpoint }) => {
   const [selected, setSelected] = useState('')
   // console.log('SelectedEndpoint:', selected)
 
-  const submitHandler = (e, val) => {
+  const submitHandler = (e) => {
     e.preventDefault();
     e.persist();
 
-    setSelected(e.target.value)
-    // updates the value for the selected item
-    setEndpoint(e.target.value)
-    /* sets value from selected option to endpoint state in <GetData/> */
+    if (e.target.value !== "Select an endpoint.") {
+      setSelected(e.target.value)
+      // updates the value for the selected item
+      setEndpoint(e.target.value)
+      /* sets value from selected option to endpoint state in <GetData/> */
+    }
+
   }
 
   return (
     <select onChange={(e) => submitHandler(e)} value={selected}>
+      <option id='default' value={'Select an endpoint.'}>{'Select an endpoint.'}</option>
       {endpoints.map((item, i) => {
         return (
           <option id={i} key={i} value={item}>{item}</option>
