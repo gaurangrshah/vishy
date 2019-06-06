@@ -1,2 +1,3 @@
-[] - update styles on console
-[] - fixing toasts
+[] - notifications - fix success message text
+[] - styling on console
+[] - styling toasts
