@@ -67,7 +67,7 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
   const keyPress = (e) => {
     /* no preventDefault on keypresslisteners */
     e.persist();
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13 || e.keyCode === '13') {
       console.log('enterPress', e.target.value)
 
       setState({
@@ -148,7 +148,7 @@ export const PComponent = ({ inputValue, editing, handleEdit, editors, className
 
 
 
-export const SimpleRenderer = (condition, Comp1, Comp2) => {
+export const simpleRenderer = (condition, Comp1, Comp2) => {
   console.log('simpleRender:', { condition, Comp1, Comp2 })
   return (condition) ? (
     <Comp2 />

@@ -4,8 +4,8 @@ import { useData } from '../../../utils/useData/useData'
 
 // used to pull links from local server endpoint and supply them to <LinksComponent links={arr}/>
 // uses useData utility to pull in data and maintain it.
+// TODO: remove this component in favor of manual links fetching from <GetData/>
 
-// 🚧 need to update progress, but all working with inputted links saving to server.
 
 const GetResLinks = () => {
 
@@ -14,9 +14,11 @@ const GetResLinks = () => {
   const { data, updateData } = useData(endpoint, null)
   // useData takes a callback, currently not using it, but just rendering it back.
 
+
+
   // console.log('adddata: ', { data, updateData, callback })
 
-  console.log('📜', { data, updateData })
+  // console.log('📜', { data, updateData })
 
   return (
 

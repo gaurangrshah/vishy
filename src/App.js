@@ -31,6 +31,7 @@ import HeaderPortal from './components/Portals/Header/HeaderPortal';
 import NameForm from './components/PlugForm/useForm';
 import { LocalNameForm } from './components/PlugForm/useFormLocalState';
 import GetResLinks from './components/Portals/Header/LinksComponent/GetResLinks';
+import { GetData } from './components/Portals/Header/LinksComponent/GetData';
 import { StdModal } from './components/Portals/Modal/StdModal';
 import ClassCounter from './components/tutorials/HooksSeries/ClassCounterEx'
 import FuncCounter from './components/tutorials/HooksSeries/FuncCounterEx'
@@ -53,11 +54,13 @@ function App() {
   return (
     <Store>
       <div className="App">
-
+        <DashPage />
         <ConsoleLogger />
         <HeaderPortal />
         <header className="App-header">
-          <DashPage />
+
+          <StdModal buttonLabel="DATA-ON-DEMAND" modalTitle="DATA-ON-DEMAND" children={<GetData />} />
+
         </header>
         <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
         <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />

@@ -35,6 +35,7 @@ export const mapArr = (arr) => (
 const LinksComponent = (props) => {
   // links is an array that gets passed in from whatever componenet is rendering <LinksComponent/>
   const { links, handleSubmit } = props;
+  /* FIXME handleSubmit props not being passed into component from GetResLinks?? */
 
   return (
     <>
@@ -48,12 +49,13 @@ const LinksComponent = (props) => {
             <mark>
               Sorry No Links Available. Check local server.
               {/* // message if no links get pulled in. */}
-              {console.log('{links}:', { links })}
+
+              {console.log('{📛 error:LinksComp}:', { links }, 'remove this message, after adding manual fetching.')}
             </mark>
           )
       }
       <StdModal
-        // isOpen={() => !this.state.modal}
+        // isOpen={}
         toggleButtonLabel="Add New Link"
         children={
           <LinkForm
@@ -61,6 +63,7 @@ const LinksComponent = (props) => {
             hideButton={() => true}
             buttonType="submit"
             handeSubmit={handleSubmit}
+          // FIXME handleSubmit not being passed into <LinksComponent/>
           // updateData={props.updateData}
           />
         }

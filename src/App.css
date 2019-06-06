@@ -58,8 +58,8 @@ mark.note {
 
 #console-toast {
   position: fixed;
-  bottom: 28em;
-  right: 1em;
+  bottom: 8em;
+  right: 0;
   background-color: #444;
   max-height: 40vh;
   overflow: scroll;
@@ -106,20 +106,3 @@ div[data-method="log"] {
   border: 1px solid blue;
   background: rgb(235, 235, 235);
 }
-
-/* .alerty {
-  position: absolute;
-  top: 0;
-  right: 0;
-  z-index: 1000;
-  min-width: 30em;
-} */
-
-/*
-// Notify Overrides
-$notie-color-success: $brand-primary;
-$notie-color-error:   $brand-danger;
-$notie-font-size-tablet: 1rem;
-$notie-font-size-desktop: 1.25rem;
-$notie-font-size-widescreen: 1.5rem;0
- */
