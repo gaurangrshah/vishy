@@ -4,6 +4,8 @@ import { RenderAlert } from '../../utils/alerty/renderAlert';
 
 // holder will hold specific bits of content and act on it.
 // takes in children from props, text, will be the default value any styles as an object, additional ClassNames, as well as any attributes, currently we've got "tabindex" being applied, but not working??
+
+
 export const StringHolder = ({ children = {}, text = '', styles = {}, className }, { ...attrs }) => {
   const { value: bindput, bind: bindBindput, submit: submitBindput } = useInput(text)
   //bindput assigned as value for the input.
@@ -15,7 +17,7 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
     className: className + ' sizer',
     // adds sizer to the classNames list
     options: {
-      toggle: false, // unused currently
+      toggle: false, // testing for use to set toggle for renderAlert.
       editors: ['input', 'textarea', 'richtext', 'markdown'], // unused currently
       attributes: { ...attrs } // stores attributes that get passed in.
     },
@@ -25,17 +27,20 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
       content: '',
     },
   })
-
   // console.log('🕉', state)
+
+  const { options, message } = state; //extract options and message
+  // console.log('options, message:', { options, message })
+
 
   const handleEdit = (e) => {
     e.target.focus(e) // sets focus when in edit mode.
     console.log('✏️ editing:', state.editing)
 
     return (state.editable) ? (
-      setState({ editable: true, editing: !state.editing })
+      setState({ ...state, editable: true, editing: !state.editing })
     ) : (
-        setState({ message: 'Sorry This is Not Editiable' })
+        setState({ ...state, message: { type: 'error', content: 'Sorry This is Not Editiable' } })
       )
   }
 
@@ -44,17 +49,39 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
     e.persist();
     // console.log('submit', bindput);
 
-    setState({ editable: true, editing: !state.editing, message: { type: 'success', content: 'saved: ' } })
+    setState({
+      ...state,
+      editable: true, editing: !state.editing, message: {
+        type: 'success',
+        content: 'submitted: '
+      },
+      options: {
+        toggle: !options.toggle
+      }
+    })
     submitBindput(e.target.value);
+    console.log('INPUT:SUBMIT', { state, message })
   }
+
 
   const keyPress = (e) => {
     /* no preventDefault on keypresslisteners */
     e.persist();
     if (e.keyCode == 13) {
       console.log('enterPress', e.target.value)
-      setState({ editable: true, editing: !state.editing, message: { type: 'success', content: 'saved: ' } })
+
+      setState({
+        ...state, editable: true, editing: !state.editing, options: {
+          toggle: !options.toggle
+        },
+        message: {
+          type: 'success',
+          content: 'submitted: '
+        }
+      })
+
       submitBindput(e.target.value);
+      console.log('INPUT:ENTER', { state, message })
     }
     return null
   }
@@ -64,17 +91,19 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
   return (
 
     <PComponent
-      value={bindput}
+      inputValue={bindput}
       editing={state.editing}
       handleEdit={handleEdit}
       className={state.className}
       styles={styles}
       attrs={state.attributes}
-      message={state.message}
-      // type={state.message.type}
+      message={message.content}
+      type={message.type}
       bindBindput={bindBindput}
       handleSubmit={handleSubmit}
       keyPress={keyPress}
+      toggle={state.options.toggle}
+      editors={state.options.editors}
     />
 
   )
@@ -82,23 +111,27 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
 
 
 
-export const PComponent = ({ value, editing, handleEdit, className, styles, attrs, message, type, bindBindput, handleSubmit, keyPress }, { ...children }) => (
+export const PComponent = ({ inputValue, editing, handleEdit, editors, className, styles, attrs, message, type, bindBindput, handleSubmit, keyPress, toggle }, { ...children }) => (
   <>
     {(!editing) ? (
+      /* TODO: extract pTag, rename PComponent, extract input, then use SimpleRenderer, to conditionally render. */
       <>
         <p
           onDoubleClick={(e) => handleEdit(e)}
           className={className}
-          // editors={state.options.editors}
+          editors={editors}
           style={{ ...styles }}
           {...attrs}
+        /* spreads out atrrs, namely trying to spread tabindex currently.  */
         >
-          {value || children}
+          {inputValue || children}
 
         </p>
         <RenderAlert
-          message={message.content + value}
-          type={message.type}
+          isOpen={toggle}
+          message={message}
+          type={type}
+          inputValue={inputValue}
         />
       </>
     ) : (
