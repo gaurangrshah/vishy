@@ -1,49 +1,52 @@
-import React from 'react'
-import { Button } from 'reactstrap'
-import LinksComponent from './LinksComponent';
-import { useData } from '../../../utils/useData/useData'
-import { useToggle } from '../../../utils/Toggle/useToggle'
+import React, { useState } from 'react'
+import { RenderFetcher } from './RenderFetcher'
 // import { simpleRenderer } from '../../../layout/content/holder'
 
-export const SetData = ({ endpoint = '', callback = null }) => {
-  const { data } = useData(endpoint, callback);
-  return (data) ? <LinksComponent links={data} /> : (
-    // TODO: use new <stringHolder/> instead
-    <p>
-      waiting...
-    </p>
-  )
-}
 
+// TODO: bring in context, to help setup array of endpoints.
 
 export const GetData = () => {
-  const [toggle, handleToggle] = useToggle();
-  console.log('🐀 GetData:CLICK.', { toggle })
 
+  const [endpoint, setEndpoint] = useState('')
+  // used to update and manage the final selected endpoint that gets passed back from EndpointSelector via RenderFetcher.
 
-  const endpoint1 = 'http://localhost:3000/reactLinks'
-  const endpoint2 = "https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/";
+  const endpoints = ['http://localhost:3000/reactLinks',
+    "https://my-json-server.typicode.com/gaurangrshah/api-sandbox/reactLinks/"];
+  // endpoints available to select from, that get passed down to EndpointSelector via RenderFetcher
 
-
+  // console.log('EndpointSelected?:', endpoint);
 
   const handleFetch = (e) => {
-    handleToggle(!toggle)
-    console.log('🐀 GetData:CLICK.', { toggle })
-    return toggle;
+    // console.log('endpointpassedback:', endpoint)
+
+
+    if (!endpoint) {
+      // logic to handle resubmits on the form, when an endpoint is already submitted.
+      return setEndpoint(endpoint)
+    } else {
+      // if endpoint already exists, will unmount component, by removing endpoint.
+      setEndpoint('')
+    }
   }
+
+
+
   return (
-    <ButtonComp1 clickHandler={handleFetch} toggle={toggle} endpoint1={endpoint1} />
+    /* renders <EndpointSelector/> and it's button based UI */
+    <RenderFetcher clickHandler={handleFetch} endpoints={endpoints} setEndpoint={setEndpoint} endpoint={endpoint} />
   )
 }
 
 
-export const ButtonComp1 = ({ clickHandler, toggle, endpoint1, endpoint2, buttonText }) => (
-  <> {/* TODO: 🚧  add select box for endpoints,  */}
-    <Button onClick={(e) => clickHandler(e)}>
-      {(toggle) ? "Unmount" : "Get Data"}
-    </Button>
-    {(toggle) ? (
-      <SetData endpoint={endpoint1} />
-    ) : null}
-  </>
-)
+/**
+*
+*
+* [internalState]
+* @param {*}  endpoint
+* used to toggle setData from RenderFetcher, when provided with a
+*
+* @callback {*}   setEndpoint
+* updates the endpoing value when a user selects an endpoint from the EndpointSelector component
+*
+* @returns {*} RenderFetcher which handles the logic for what to fetch and when to fetch which.
+*/

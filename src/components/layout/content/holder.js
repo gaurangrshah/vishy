@@ -5,6 +5,7 @@ import { RenderAlert } from '../../utils/alerty/renderAlert';
 // holder will hold specific bits of content and act on it.
 // takes in children from props, text, will be the default value any styles as an object, additional ClassNames, as well as any attributes, currently we've got "tabindex" being applied, but not working??
 
+// FIXME 🚧
 
 export const StringHolder = ({ children = {}, text = '', styles = {}, className }, { ...attrs }) => {
   const { value: bindput, bind: bindBindput, submit: submitBindput } = useInput(text)
@@ -111,10 +112,33 @@ export const StringHolder = ({ children = {}, text = '', styles = {}, className 
 
 
 
+/**
+*
+* @param {*} inputValue ={bindput}
+* @param {*} editing ={state.editing}
+* @param {*} handleEdit  ={handleEdit}
+* @param {*} className ={state.className}
+* @param {*} styles ={styles}
+* @param {*} attrs ={state.attributes}
+* @param {*} message ={message.content}
+* @param {*} type ={message.type}
+* @param {*} bindBindput ={bindBindput}
+* @param {*} handleSubmit ={handleSubmit}
+* @param {*} keyPress  ={keyPress}
+* @param {*} toggle ={state.options.toggle}
+* @param {*} editors ={state.options.editors}
+* @param {*} {...children}
+*
+* @returns {*}
+*/
+
+
+
 export const PComponent = ({ inputValue, editing, handleEdit, editors, className, styles, attrs, message, type, bindBindput, handleSubmit, keyPress, toggle }, { ...children }) => (
   <>
     {(!editing) ? (
       /* TODO: extract pTag, rename PComponent, extract input, then use SimpleRenderer, to conditionally render. */
+
       <>
         <p
           onDoubleClick={(e) => handleEdit(e)}
@@ -124,9 +148,10 @@ export const PComponent = ({ inputValue, editing, handleEdit, editors, className
           {...attrs}
         /* spreads out atrrs, namely trying to spread tabindex currently.  */
         >
-          {inputValue || children}
 
+          {inputValue || children}
         </p>
+
         <RenderAlert
           isOpen={toggle}
           message={message}
@@ -134,13 +159,16 @@ export const PComponent = ({ inputValue, editing, handleEdit, editors, className
           inputValue={inputValue}
         />
       </>
+
     ) : (
+
         <input
           type="text"
           {...bindBindput}
           onBlur={(e) => handleSubmit(e)}
           onKeyDown={(e) => keyPress(e)}
         />
+
       )}
 
   </>

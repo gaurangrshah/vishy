@@ -62,7 +62,7 @@ function App() {
           <StdModal buttonLabel="DATA-ON-DEMAND" modalTitle="DATA-ON-DEMAND" children={<GetData />} />
 
         </header>
-        <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks />} />
+        <StdModal buttonLabel="Link-Form-PopupEx" modalTitle="Name-Form-PopupEx" children={<GetResLinks endpoint={"http://localhost:3000/reactLinks"} />} />
         <StdModal buttonLabel="Login" modalTitle="useState Login Widget" children={<LoginWidget />} />
         <StdModal buttonLabel="ArrCounterEx" modalTitle="ArrCounterEx" children={<ArrCounter />} />
         <StdModal buttonLabel="HookCounterFinal" modalTitle="HookCounterFinal" children={<HookCounterFinal />} />

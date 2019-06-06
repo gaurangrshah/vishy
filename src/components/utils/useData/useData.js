@@ -26,7 +26,7 @@ export const useData = (endpoint, callback, initialValue) => {
             return response
           })
           .catch(err => {
-            console.log('error: 📛', { err })
+            console.log('useDataFetcherror: 📛', { err })
           })
           .then(null)
         // if no error, then handles updateData
@@ -46,3 +46,20 @@ export const useData = (endpoint, callback, initialValue) => {
   return { data, updateData, callback }
   // havent utilized callback, just retuning it back for now.
 }
+
+
+/**
+*
+*
+* [:]
+* @arg {*}    endpoint      [string] [url] used to submit request
+* @arg {*}    callback      [function]  currently unused, but can be used to act on data from parent
+* @arg {*}    initialValue  [any] sets the intialValue of "data" if provided
+*
+* [InternalState:]
+* @param {*}  data         defaults to empty, used as a placeholder for response.data
+* @param {*}  setData      abstracted as updateData used to setData
+* @param {*}  updateData   used to call setData, passes in a value which then updates 'data with
+*
+* @returns {*}
+* 6/6/19 */
