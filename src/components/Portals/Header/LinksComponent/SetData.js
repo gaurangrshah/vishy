@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { useData } from '../../../utils/useData/useData'
-import LinksComponent from './LinksComponent';
+import { BoxSizer, MapBoxes } from '../../../layout/boxes/BoxSizer';
 
 
 
@@ -9,7 +9,7 @@ export const SetData = ({ endpoint }) => {
   console.log('runSetData:', endpoint)
   const { data } = useData(endpoint);
   return (data) ? (
-    <LinksComponent links={data} />
+    <BoxSizer children={MapBoxes(data)} />
   ) : (
       <p>
         fetching...
@@ -19,7 +19,7 @@ export const SetData = ({ endpoint }) => {
 
 
 /**
-*TODO: use new StringHolder instead of LinksComponent.
+*
 *
 * [ExternalProp]
 * @param {*}  endpoint  endpoint is used to get data via useData,

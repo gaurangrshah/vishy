@@ -1,11 +1,19 @@
-[] - PComponent (holder.js) extract pTag, rename PComponent, extract input, then use SimpleRenderer, to conditionally render.
-[] - useState based eror handling.
-[] - add check to handle user message when endpoint is not available.
+[] -
+[] -
+[] -
+[] -
+
+[] - useState based eror handling. for use Data.
 [] - Break up http requests. (Get Request Done.)
-[] - GetData - Add Selection for endpoints.
+
 [] - Add loading spinner.
 [] - tabindex working in holder.js
+[] -
 [] - styling on console
+[] -
+[x] - StringHandler extract input, then use SimpleRenderer, to conditionally render.
+[x] - add check to handle user message when endpoint is not available.
+[x] - GetData - Add Selection for endpoints.
 [x] - styling toasts
 [x] - notifications - fix success message text
 [x] - Enter saves on keyDown.

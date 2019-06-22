@@ -6,11 +6,11 @@ import { StdModal } from '../../Modal/StdModal';
 export const mapArr = (arr) => (
 
   (Array.isArray(arr)) ? (
-    arr.map((item, index) => {
+    arr.map((item, i) => {
       // console.log(item)
       return (
         <li
-          key={index}
+          key={i}
         >
           <a
             href={item.href}

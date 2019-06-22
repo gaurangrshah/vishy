@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import DashPortalWrapper from '../components/Portals/Modal/DashPortalWrapper';
 import DoList from './DoList/DoList'
 
 const InitialGlobalState = {
   user: { type: 'guest', isLoggedIn: false, username: '', password: null },
   status: { error: '', success: '', other: [] },
-  data: { id: '', content: [] },
+  data: { currContent: [], dataTypes: ['notes'], notes: { notebooks: [{ pages: [{ content: {} }] }] } },
   mode: { default: true, edit: false, admin: false, },
   component: { editable: true, editing: false, value: '' }
 }
@@ -15,7 +15,7 @@ export const DashPage = (props) => {
 
   const [state, setState] = useState(InitialGlobalState);
 
-  console.log('🎆 currState: ', { state });
+  console.log('🎆 currState: ', { state, setState });
 
   const GlobalContext = React.createContext(state)
   const UserContext = React.createContext(state.user)
@@ -25,12 +25,12 @@ export const DashPage = (props) => {
 
   return (
 
-    <DashPortalWrapper isOpen={props.isOpen}>
+    <DashPortalWrapper isOpen={true || props.isOpen}>
 
       <DoList />
 
     </DashPortalWrapper>
+
   )
 }
-
 

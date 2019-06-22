@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import marked from 'marked';
 import Twrap from '../../utils/Twrap/Twrap';
-import './md.css'
+// import './md.css'
 
 class MDViewer extends Component {
   constructor(props) {

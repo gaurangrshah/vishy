@@ -39,7 +39,7 @@ const RenderAlert = ({ message, inputValue, type, isOpen, duration = 1800 }) => 
       toastHeader={type}
       /* passes in the type to the toast header where the appropriate icon is set. */
       toastBody={message} /* sets the body for the toast, using the value from message. */
-      toastValue={inputValue}
+      toastValue={inputValue || ''}
     />
   )
 }

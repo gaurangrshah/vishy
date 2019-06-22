@@ -1,6 +1,7 @@
 import React from 'react';
 import { RenderAlert } from '../../../utils/alerty/renderAlert';
 
+
 export const StringHandler = ({ inputValue, editing, handleEdit, editors, className, styles, attrs, message, type, bindBindput, handleSubmit, keyPress, toggle }, { ...children }) => (
   <>
     {(!editing) ? (
@@ -40,3 +41,9 @@ export const StringHandler = ({ inputValue, editing, handleEdit, editors, classN
 
   </>
 )
+
+
+/*
+
+
+*/

@@ -1,4 +1,8 @@
-import axios from 'axios'
+// import React from 'react';
+import axios from 'axios';
+// import { RenderAlert } from '../../utils/alerty/renderAlert';
+
+// used by useForm.js
 
 export const Setter = (endpoint, callback, payload) => {
   console.log('inUseSetter')
@@ -22,7 +26,8 @@ export const Setter = (endpoint, callback, payload) => {
 
       return payload
     }
-
+    // mount = !mount;
+    console.log('setter: 🏔', mount)
     return postData().then(() => callback(payload)).then(() => console.log('success2'))
   }
 }
