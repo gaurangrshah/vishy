@@ -5,5 +5,5 @@
 
 ## Javascript Methods
 
-* [Untitled](javascript-methods/untitled.md)
+* [React Methods](javascript-methods/untitled.md)
 

@@ -63,6 +63,19 @@ Finally, we can abstract this functionality away into a function that does this 
 {% endhint %}
 
 ```javascript
+const newObject = (arrOfObjs) =>  {
+  let newArrOfObjs = arrOfObjs.map(({name, value}) => ({
+    [name]: value
+  }))
+  return Object.assign({}, ...newArrOfObjs)
+}
+
+console.log(newObject(views)) 
+
+// => { title: '', text: '', rate: '', delay: '', emoji: '' }
+```
+
+```javascript
 function newObject (arrOfObjs) {
   let newArrOfObjs = arrOfObjs.map(({name, value}) => ({
     [name]: value
