@@ -70,6 +70,8 @@ function newObject (arrOfObjs) {
   return Object.assign({}, ...newArrOfObjs)
 }
 
-console.log(newObject(views))
+console.log(newObject(views)) 
+
+// => { title: '', text: '', rate: '', delay: '', emoji: '' }
 ```
 
