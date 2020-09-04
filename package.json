@@ -11,7 +11,7 @@
     "draftjs-to-markdown": "^0.5.1",
     "html-to-draftjs": "^1.4.0",
     "json-server": "^0.15.0",
-    "marked": "^0.6.2",
+    "marked": "^0.7.0",
     "notie": "^4.3.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
