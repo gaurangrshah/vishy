@@ -5,7 +5,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "bootstrap": "^4.3.1",
-    "console-feed": "^2.8.8",
+    "console-feed": "^2.8.10",
     "draft-js": "^0.10.5",
     "draftjs-to-html": "^0.8.4",
     "draftjs-to-markdown": "^0.5.1",
